@@ -1,0 +1,41 @@
+{
+  "layer": "top",
+  // ========================================
+  // Left
+  // ========================================
+  "modules-left": [
+    "hyprland/workspaces"
+  ],
+  "hyprland/workspaces": {
+    "format": "{name}"
+  },
+  // ========================================
+  // Center
+  // ========================================
+  "modules-center": [],
+  // ========================================
+  // Right
+  // ========================================
+  "modules-right": [
+    "tray",
+    "clock#time",
+    "clock#date"
+  ],
+  "tray": {
+    "icon-size": 24,
+    "spacing": 10
+  },
+  "clock#time": {
+    "format": "<tt>{:%H:%M}</tt>",
+    "tooltip-format": "<tt>{:%H:%M:%S}</tt>",
+    "interval": 1
+  },
+  "clock#date": {
+    "format": "<tt>{:%Y-%m-%d}</tt>",
+    "tooltip-format": "<tt>{:%d %B, %A}</tt>",
+    "interval": 1,
+    // Open calendar on click
+    "on-click": "gsimplecal"
+  }
+  // ========================================
+}

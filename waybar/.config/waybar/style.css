@@ -1,0 +1,68 @@
+/* Make waybar transparent */
+window#waybar {
+  background: transparent;
+}
+
+#workspaces button {
+  /* Same block style */
+  margin-top: 4px;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 8px;
+  margin-left: 8px;
+  font-family: "JetbrainsMono Nerd Font";
+  font-size: 24px;
+
+	background: white;
+	color: #161320;
+}
+
+#workspaces button:first-child {
+  margin-left: 0px;
+}
+
+#workspaces button.active {
+  background: green;
+}
+
+#tray {
+  /* Same block style */
+  margin-top: 4px;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 8px;
+  margin-left: 8px;
+  font-family: "JetbrainsMono Nerd Font";
+  font-size: 24px;
+
+  background: #161320;
+  color: #b5e8e0;
+}
+
+#clock.time {
+  /* Same block style */
+  margin-top: 4px;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 8px;
+  margin-left: 8px;
+  font-family: "JetbrainsMono Nerd Font";
+  font-size: 24px;
+
+  background: #abe9b3;
+  color: #161320;
+}
+
+#clock.date {
+  /* Same block style */
+  margin-top: 4px;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 8px;
+  margin-left: 8px;
+  font-family: "JetbrainsMono Nerd Font";
+  font-size: 24px;
+
+  background: #abe9b3;
+  color: #161320;
+}

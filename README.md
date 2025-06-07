@@ -6,9 +6,19 @@
 
     - Arch Linux:
 
-        ```sh
-        sudo pacman --noconfirm --sync --refresh --needed git stow
-        ```
+        - Basic:
+
+            ```sh
+            sudo pacman --noconfirm --sync --refresh --needed git stow
+            ```
+
+        - For `waybar`:
+
+            ```sh
+            sudo pacman --noconfirm --sync --refresh --needed gsimplecal
+            ```
+
+            - `gsimplecal`: Calendar.
 
 2. Clone this repository:
 
@@ -24,9 +34,17 @@
 
 4. Apply configs:
 
-    ```sh
-    stow --target="${HOME}" --stow bash
-    ```
+    - `bash`:
+
+        ```sh
+        stow --target="${HOME}" --stow bash
+        ```
+
+    - `waybar`:
+
+        ```sh
+        stow --target="${HOME}" --stow waybar
+        ```
 
 ## 2. Uninstallation
 
