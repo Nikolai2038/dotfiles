@@ -69,7 +69,8 @@ Dotfiles for my Arch Linux environment.
         stow --no-folding --target="${HOME}" --stow hyprland && \
         stow --no-folding --target="${HOME}" --stow waybar && \
         stow --no-folding --target="${HOME}" --stow copyq && \
-        stow --no-folding --target="${HOME}" --stow dunst
+        stow --no-folding --target="${HOME}" --stow dunst && \
+        stow --no-folding --target="${HOME}" --stow gsimplecal
         ```
 
 ## 3. Uninstallation
@@ -94,6 +95,7 @@ Dotfiles for my Arch Linux environment.
         stow --no-folding --target="${HOME}" --delete hyprland && \
         stow --no-folding --target="${HOME}" --delete waybar && \
         stow --no-folding --target="${HOME}" --delete copyq && \
-        stow --no-folding --target="${HOME}" --delete dunst
+        stow --no-folding --target="${HOME}" --delete dunst && \
+        stow --no-folding --target="${HOME}" --delete gsimplecal
 
 3. Remove cloned repository.
