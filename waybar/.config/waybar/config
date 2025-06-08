@@ -61,8 +61,8 @@
     "format": "{}",
     "format-en": "EN",
     "format-ru": "RU",
-    "on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next",
-    "on-click-right": "hyprctl switchxkblayout at-translated-set-2-keyboard prev"
+    "on-click": "hyprctl switchxkblayout current next",
+    "on-click-right": "hyprctl switchxkblayout current prev"
   },
   "clock": {
     "format": "{:%Y-%m-%d │ %H:%M}",
