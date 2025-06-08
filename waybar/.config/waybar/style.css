@@ -12,21 +12,33 @@ window#waybar {
   background: transparent;
 }
 
-#workspaces {
-  /* Left gap */
-  margin-left: 8px;
-
+#workspaces,
+#cpu,
+#memory,
+#disk.rootfs,
+#disk.homefs,
+#clock,
+#language,
+#tray,
+#custom-notifications,
+#battery {
   /* Same gaps */
   margin-bottom: 8px;
+  margin-left: 4px;
+  margin-right: 4px;
 
   /* Same block style */
   border-radius: 8px;
   font-size: 24px;
-  background: alpha(#777777, 0.4);
+  background: alpha(#444444, 0.8);
   color: #ffffff;
 
-  /* We use monospace to keep same width */
-  font-family: 'Fira Code', monospace;
+  padding: 0px 12px;
+}
+
+#workspaces {
+  padding: 0;
+  margin-left: 8px;
 }
 
 #workspaces button {
@@ -37,7 +49,6 @@ window#waybar {
   border-right: solid 1px #aaaaaa;
   border-left: solid 1px #aaaaaa;
 }
-
 
 #workspaces button:first-child {
   border-top-left-radius: 8px;
@@ -55,19 +66,12 @@ window#waybar {
   background: alpha(#007700, 0.4);
 }
 
+#language {
+  /* We use monospace to keep same width */
+  font-family: 'Fira Code', monospace;
+}
+
 #tray {
-  /* Right gap */
-  margin-right: 8px;
-
-  /* Same gaps */
-  margin-bottom: 8px;
-
-  /* Same block style */
-  border-radius: 8px;
-  font-size: 24px;
-  background: alpha(#777777, 0.4);
-  color: #ffffff;
-
   padding: 0px 4px;
 }
 
@@ -96,81 +100,30 @@ window#waybar {
   color: #ffffff;
 }
 
-#custom-notifications {
-  /* Right gap */
-  margin-right: 8px;
-
-  /* Same gaps */
-  margin-bottom: 8px;
-
-  /* Same block style */
-  border-radius: 8px;
-  font-size: 24px;
-  background: alpha(#777777, 0.4);
-  color: #ffffff;
-
-  padding: 0px 12px;
-}
-
 #battery {
-  /* Right gap */
   margin-right: 8px;
-
-  /* Same gaps */
-  margin-bottom: 8px;
-
-  /* Same block style */
-  border-radius: 8px;
-  font-size: 24px;
-  background: alpha(#777777, 0.4);
-  color: #ffffff;
-
-  padding: 0px 10px 0px 12px;
 }
 
+#cpu,
+#memory,
+#disk.rootfs,
+#disk.homefs,
 #battery {
-  color: #00aa00;
+  color: #ffffff;
 }
 
+#cpu.warning,
+#memory.warning,
+#disk.rootfs.warning,
+#disk.homefs.warning,
 #battery.warning {
   color: #ffbb22;
 }
 
+#cpu.critical,
+#memory.critical,
+#disk.rootfs.critical,
+#disk.homefs.critical,
 #battery.critical {
   color: #aa0000;
-}
-
-#language {
-  /* Right gap */
-  margin-right: 8px;
-
-  /* Same gaps */
-  margin-bottom: 8px;
-
-  /* Same block style */
-  border-radius: 8px;
-  font-size: 24px;
-  background: alpha(#777777, 0.4);
-  color: #ffffff;
-
-  /* We use monospace to keep same width */
-  font-family: 'Fira Code', monospace;
-
-  padding: 0px 12px;
-}
-
-#clock {
-  /* Right gap */
-  margin-right: 8px;
-
-  /* Same gaps */
-  margin-bottom: 8px;
-
-  /* Same block style */
-  border-radius: 8px;
-  font-size: 24px;
-  background: alpha(#777777, 0.4);
-  color: #ffffff;
-
-  padding: 0px 10px 0px 12px;
 }

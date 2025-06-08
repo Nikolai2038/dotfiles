@@ -7,7 +7,11 @@
   // Left
   // ========================================
   "modules-left": [
-    "hyprland/workspaces"
+    "hyprland/workspaces",
+    "cpu",
+    "memory",
+    "disk#rootfs",
+    "disk#homefs"
   ],
   "hyprland/workspaces": {
     "format": "{name}"
@@ -15,16 +19,17 @@
   // ========================================
   // Center
   // ========================================
-  "modules-center": [],
+  "modules-center": [
+    "clock",
+    "hyprland/language"
+  ],
   // ========================================
   // Right
   // ========================================
   "modules-right": [
     "tray",
     "custom/notifications",
-    "battery",
-    "hyprland/language",
-    "clock"
+    "battery"
   ],
   "tray": {
     "icon-size": 32,
@@ -40,22 +45,87 @@
     "on-click-middle": "~/.config/dunst/pop_all_notifications.sh",
     "tooltip": false
   },
-  "battery": {
-    "interval": 60,
+  "cpu": {
+    "interval": 10,
+    "format": "  {usage}%",
+    "format-alt": "  {usage}% │ {avg_frequency} GHz",
+    "on-click": "mode",
+    "tooltip": false,
     "states": {
+      "good": 0,
+      "warning": 70,
+      "critical": 90
+    }
+  },
+  "memory": {
+    "interval": 10,
+    "format": " {percentage}%",
+    "format-alt": " {percentage}% │ {used:0.2f}/{total:0.2f} GiB",
+    "on-click": "mode",
+    "tooltip": false,
+    "states": {
+      "good": 0,
+      "warning": 70,
+      "critical": 90
+    }
+  },
+  "disk#rootfs": {
+    "interval": 60,
+    "format": "⛁ {percentage_used}%",
+    "format-alt": "⛁ {percentage_used}% │ {path} │ {used} / {total}",
+    "on-click": "mode",
+    "path": "/mnt/rootfs",
+    "tooltip": false,
+    "states": {
+      "good": 0,
+      "warning": 70,
+      "critical": 90
+    }
+  },
+  "disk#homefs": {
+    "interval": 60,
+    "format": "⛁ {percentage_used}%",
+    "format-alt": "⛁ {percentage_used}% │ {path} │ {used} / {total}",
+    "on-click": "mode",
+    "path": "/mnt/homefs",
+    "tooltip": false,
+    "states": {
+      "good": 0,
+      "warning": 70,
+      "critical": 90
+    }
+  },
+  "battery": {
+    "interval": 1,
+    "states": {
+      "good": 100,
       "warning": 30,
       "critical": 15
     },
-    "format": "{icon}   {capacity}%",
-    "tooltip": true,
-    "tooltip-format": "Current: {capacity}%. Consuming {power} watts. Time to fully charge: {time}.",
+    "on-click": "mode",
+    // ----------------------------------------
+    // Discharging state
+    // ----------------------------------------
     "format-icons": [
       "",
       "",
       "",
       "",
       ""
-    ]
+    ],
+    "format": "{icon}   {capacity}%",
+    "format-alt": "{icon}   {capacity}% │ {power:0.2f} watts",
+    // ----------------------------------------
+    // Charging state
+    // ----------------------------------------
+    "format-charging": " {capacity}%",
+    // ----------------------------------------
+    // Plugged state.
+    // When fully charged and plugged - status will be "Not charging" - it is actually "plugged" here.
+    // ----------------------------------------
+    "format-full": "  {capacity}%",
+    "format-plugged": "  {capacity}%"
+    // ----------------------------------------
   },
   "hyprland/language": {
     "format": "{}",
