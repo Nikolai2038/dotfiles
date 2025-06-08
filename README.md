@@ -40,7 +40,7 @@ Dotfiles for my Arch Linux environment.
             - `copyq`: Clipboard manager;
             - `wl-clip-persist`: To [persist clipboard contents after program was closed](https://wiki.hyprland.org/Useful-Utilities/Clipboard-Managers/);
             - `dunst`: Notification daemon;
-            - `zenity`: To show nice message prompts (Yes/No) on some waybar actions;
+            - `zenity`: To show nice message prompts (Yes/No) on some waybar actions (for example, to clear notifications history);
             - `jq`: To parse JSON output from `dunstctl` and get notifications count.
 
 2. Clone this repository:
@@ -68,7 +68,8 @@ Dotfiles for my Arch Linux environment.
         ```sh
         stow --no-folding --target="${HOME}" --stow hyprland && \
         stow --no-folding --target="${HOME}" --stow waybar && \
-        stow --no-folding --target="${HOME}" --stow copyq
+        stow --no-folding --target="${HOME}" --stow copyq && \
+        stow --no-folding --target="${HOME}" --stow dunst
         ```
 
 ## 3. Uninstallation
@@ -92,6 +93,7 @@ Dotfiles for my Arch Linux environment.
         ```sh
         stow --no-folding --target="${HOME}" --delete hyprland && \
         stow --no-folding --target="${HOME}" --delete waybar && \
-        stow --no-folding --target="${HOME}" --delete copyq
+        stow --no-folding --target="${HOME}" --delete copyq && \
+        stow --no-folding --target="${HOME}" --delete dunst
 
 3. Remove cloned repository.
