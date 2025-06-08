@@ -32,7 +32,9 @@
   "hyprland/language": {
     "format": "{}",
     "format-en": "EN",
-    "format-ru": "RU"
+    "format-ru": "RU",
+    "on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next",
+    "on-click-right": "hyprctl switchxkblayout at-translated-set-2-keyboard prev"
   },
   "clock": {
     "format": "{:%Y-%m-%d │ %H:%M}",

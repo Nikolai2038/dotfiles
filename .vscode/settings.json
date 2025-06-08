@@ -1,6 +1,8 @@
 {
   "cSpell.words": [
-    "gsimplecal"
+    "gsimplecal",
+    "hyprctl",
+    "switchxkblayout"
   ],
   "filewatcher.commands": [
     // Automatically reload hyprland on file changes
