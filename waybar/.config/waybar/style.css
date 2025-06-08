@@ -1,59 +1,88 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  border-radius: 0px;
+  background: none;
+}
+
+*.popup {
+  background-color: #1e1e2e;
+  border: 1px solid #89b4fa;
+  border-radius: 6px;
+  padding: 10px;
+  color: #ff0000;
+  font-size: 13px;
+}
+
 /* Make waybar transparent */
 window#waybar {
   background: transparent;
 }
 
-#workspaces button:first-child {
+#workspaces {
+  /* Left gap */
   margin-left: 8px;
-}
 
-#clock.date:last-child {
-  margin-right: 8px;
-}
+  /* Same gaps */
+  margin-bottom: 8px;
 
-#workspaces button {
   /* Same block style */
-  margin-top: 4px;
-  padding: 0px 12px;
-  border-radius: 64px;
-  margin-left: 8px;
+  border-radius: 8px;
   font-family: "JetbrainsMono Nerd Font";
   font-size: 24px;
-  background: alpha(#777777, 0.6);
+  background: alpha(#777777, 0.4);
   color: #ffffff;
 }
 
+#workspaces button {
+  margin-top: 0px;
+  padding: 0px 12px;
+
+  /* Borders between workspaces */
+  border-right: solid 1px #aaaaaa;
+  border-left: solid 1px #aaaaaa;
+}
+
+
+#workspaces button:first-child {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  border-left: none;
+}
+
+#workspaces button:last-child {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border-right: none;
+}
+
 #workspaces button.active {
-  background: alpha(#007700, 0.6);
+  background: alpha(#007700, 0.4);
 }
 
 #tray {
-  /* Same block style */
-  margin-top: 4px;
+  /* Same gaps */
+  margin-bottom: 8px;
+
+  margin-right: 8px;
 
   background: transparent;
 }
 
-#clock.time {
-  /* Same block style */
-  margin-top: 4px;
-  padding: 0px 12px;
-  border-radius: 64px;
-  margin-left: 8px;
-  font-family: "JetbrainsMono Nerd Font";
-  font-size: 24px;
-  background: alpha(#777777, 0.6);
-  color: #ffffff;
-}
+#clock {
+  /* Right gap */
+  margin-right: 8px;
 
-#clock.date {
+  /* Same gaps */
+  margin-bottom: 8px;
+
   /* Same block style */
-  margin-top: 4px;
-  padding: 0px 12px;
-  border-radius: 64px;
-  margin-left: 8px;
+  border-radius: 8px;
   font-family: "JetbrainsMono Nerd Font";
   font-size: 24px;
-  background: alpha(#777777, 0.6);
+  background: alpha(#777777, 0.4);
   color: #ffffff;
+
+  padding: 0px 12px;
 }
