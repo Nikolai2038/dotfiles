@@ -2,7 +2,15 @@
 
 Dotfiles for my Arch Linux environment.
 
-## 1. Installation
+## 1. Description
+
+### 1.1. Notifications
+
+- Left click: Pop latest notification from history;
+- Middle click: Pop all notifications from history;
+- Right click: Show prompt to clear notifications history.
+
+## 2. Installation
 
 1. Install required packages:
 
@@ -17,7 +25,7 @@ Dotfiles for my Arch Linux environment.
         - Hyprland environment:
 
             ```sh
-            sudo pacman --noconfirm --sync --refresh --needed hyprland hyprpolkitagent qt5-wayland qt6-wayland waybar ttf-font-awesome blueman network-manager-applet gsimplecal copyq wl-clip-persist dunst
+            sudo pacman --noconfirm --sync --refresh --needed hyprland hyprpolkitagent qt5-wayland qt6-wayland waybar ttf-font-awesome blueman network-manager-applet gsimplecal copyq wl-clip-persist dunst zenity jq
             ```
 
             - `hyprland`: Wayland compositor;
@@ -31,7 +39,9 @@ Dotfiles for my Arch Linux environment.
             - `gsimplecal`: Calendar;
             - `copyq`: Clipboard manager;
             - `wl-clip-persist`: To [persist clipboard contents after program was closed](https://wiki.hyprland.org/Useful-Utilities/Clipboard-Managers/);
-            - `dunst`: Notification daemon.
+            - `dunst`: Notification daemon;
+            - `zenity`: To show nice message prompts (Yes/No) on some waybar actions;
+            - `jq`: To parse JSON output from `dunstctl` and get notifications count.
 
 2. Clone this repository:
 
@@ -61,7 +71,7 @@ Dotfiles for my Arch Linux environment.
         stow --no-folding --target="${HOME}" --stow copyq
         ```
 
-## 2. Uninstallation
+## 3. Uninstallation
 
 1. `cd` to cloned repository:
 

@@ -2,6 +2,7 @@
   "cSpell.words": [
     "activeworkspace",
     "blueman",
+    "dunstctl",
     "gsimplecal",
     "hyprctl",
     "hyprpolkitagent",
@@ -10,7 +11,8 @@
     "movewindow",
     "moveworkspacetomonitor",
     "resizewindow",
-    "switchxkblayout"
+    "switchxkblayout",
+    "zenity"
   ],
   "filewatcher.commands": [
     // Automatically reload "hyprland" on file changes

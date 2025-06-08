@@ -21,6 +21,7 @@
   // ========================================
   "modules-right": [
     "tray",
+    "custom/notifications",
     "battery",
     "hyprland/language",
     "clock"
@@ -29,6 +30,15 @@
     "icon-size": 32,
     "spacing": 8,
     "reverse-direction": true
+  },
+  "custom/notifications": {
+    "exec": "~/.config/dunst/echo_number_of_notifications.sh",
+    "interval": 1,
+    "format": "🔔{}",
+    "on-click": "dunstctl history-pop",
+    "on-click-right": "~/.config/dunst/remove_all_notifications.sh",
+    "on-click-middle": "~/.config/dunst/pop_all_notifications.sh",
+    "tooltip": false
   },
   "battery": {
     "interval": 60,

@@ -88,6 +88,22 @@ window#waybar {
   color: #ffffff;
 }
 
+#custom-notifications {
+  /* Right gap */
+  margin-right: 8px;
+
+  /* Same gaps */
+  margin-bottom: 8px;
+
+  /* Same block style */
+  border-radius: 8px;
+  font-size: 24px;
+  background: alpha(#777777, 0.4);
+  color: #ffffff;
+
+  padding: 0px 12px;
+}
+
 #battery {
   /* Right gap */
   margin-right: 8px;
