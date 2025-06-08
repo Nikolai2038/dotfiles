@@ -1,7 +1,13 @@
 {
   "cSpell.words": [
+    "activeworkspace",
     "gsimplecal",
     "hyprctl",
+    "movefocus",
+    "movetoworkspace",
+    "movewindow",
+    "moveworkspacetomonitor",
+    "resizewindow",
     "switchxkblayout"
   ],
   "filewatcher.commands": [

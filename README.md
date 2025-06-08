@@ -12,13 +12,18 @@
             sudo pacman --noconfirm --sync --refresh --needed git stow
             ```
 
-        - For `waybar`:
+        - Hyprland environment:
 
             ```sh
-            sudo pacman --noconfirm --sync --refresh --needed gsimplecal
+            sudo pacman --noconfirm --sync --refresh --needed hyprland waybar ttf-font-awesome gsimplecal copyq wl-clip-persist
             ```
 
-            - `gsimplecal`: Calendar.
+            - `hyprland`: Wayland compositor;
+            - `waybar`: Panel;
+            - `ttf-font-awesome`: Font with icons;
+            - `gsimplecal`: Calendar;
+            - `copyq`: Clipboard manager;
+            - `wl-clip-persist`: To [persist clipboard after program was closed](https://wiki.hyprland.org/Useful-Utilities/Clipboard-Managers/).
 
 2. Clone this repository:
 
@@ -37,13 +42,15 @@
     - `bash`:
 
         ```sh
-        stow --target="${HOME}" --stow bash
+        stow --no-folding  --target="${HOME}" --stow bash
         ```
 
-    - `waybar`:
+    - Hyprland environment:
 
         ```sh
-        stow --target="${HOME}" --stow waybar
+        stow --no-folding --target="${HOME}" --stow hyprland && \
+        stow --no-folding --target="${HOME}" --stow waybar && \
+        stow --no-folding --target="${HOME}" --stow copyq
         ```
 
 ## 2. Uninstallation
@@ -56,6 +63,15 @@
 
 2. Delete configs:
 
-    ```sh
-    stow --target="${HOME}" --delete bash
-    ```
+    - `bash`:
+
+        ```sh
+        stow --no-folding  --target="${HOME}" --delete bash
+        ```
+
+    - Hyprland environment:
+
+        ```sh
+        stow --no-folding --target="${HOME}" --delete hyprland && \
+        stow --no-folding --target="${HOME}" --delete waybar && \
+        stow --no-folding --target="${HOME}" --delete copyq
