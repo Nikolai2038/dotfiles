@@ -1,0 +1,5 @@
+/* Hide waybar */
+window#waybar {
+  opacity: 0;
+  height: 0;
+}
