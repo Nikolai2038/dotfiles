@@ -17,7 +17,7 @@ Dotfiles for my Arch Linux environment.
         - Hyprland environment:
 
             ```sh
-            sudo pacman --noconfirm --sync --refresh --needed hyprland hyprpolkitagent qt5-wayland qt6-wayland waybar ttf-font-awesome blueman network-manager-applet gsimplecal copyq wl-clip-persist
+            sudo pacman --noconfirm --sync --refresh --needed hyprland hyprpolkitagent qt5-wayland qt6-wayland waybar ttf-font-awesome blueman network-manager-applet gsimplecal copyq wl-clip-persist dunst
             ```
 
             - `hyprland`: Wayland compositor;
@@ -30,7 +30,8 @@ Dotfiles for my Arch Linux environment.
             - `network-manager-applet`: Applet to manage network connections;
             - `gsimplecal`: Calendar;
             - `copyq`: Clipboard manager;
-            - `wl-clip-persist`: To [persist clipboard after program was closed](https://wiki.hyprland.org/Useful-Utilities/Clipboard-Managers/).
+            - `wl-clip-persist`: To [persist clipboard contents after program was closed](https://wiki.hyprland.org/Useful-Utilities/Clipboard-Managers/);
+            - `dunst`: Notification daemon.
 
 2. Clone this repository:
 

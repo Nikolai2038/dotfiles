@@ -13,17 +13,23 @@
     "switchxkblayout"
   ],
   "filewatcher.commands": [
-    // Automatically reload hyprland on file changes
+    // Automatically reload "hyprland" on file changes
     {
       "event": "onFileChange",
       "match": ".*/hyprland/.*",
       "cmd": "hyprctl reload"
     },
-    // Automatically reload waybar on file changes
+    // Automatically reload "waybar" on file changes
     {
       "event": "onFileChange",
       "match": ".*/waybar/.*",
       "cmd": "pgrep --exact --full waybar && pkill -SIGUSR2 waybar || waybar"
+    },
+    // Automatically reload "dunst" on file changes
+    {
+      "event": "onFileChange",
+      "match": ".*/dunst/.*",
+      "cmd": "systemctl --user stop dunst.service; systemctl --user start dunst.service"
     }
   ],
 }
