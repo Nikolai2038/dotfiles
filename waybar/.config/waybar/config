@@ -22,8 +22,8 @@
     "clock#date"
   ],
   "tray": {
-    "icon-size": 24,
-    "spacing": 10
+    "icon-size": 32,
+    "spacing": 8
   },
   "clock#time": {
     "format": "<tt>{:%H:%M}</tt>",

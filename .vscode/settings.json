@@ -1,5 +1,19 @@
 {
   "cSpell.words": [
     "gsimplecal"
-  ]
+  ],
+  "filewatcher.commands": [
+    // Automatically reload hyprland on file changes
+    {
+      "event": "onFileChange",
+      "match": ".*/hyprland/.*",
+      "cmd": "hyprctl reload"
+    },
+    // Automatically reload waybar on file changes
+    {
+      "event": "onFileChange",
+      "match": ".*/waybar/.*",
+      "cmd": "pgrep --exact --full waybar && pkill -SIGUSR2 waybar || waybar"
+    }
+  ],
 }
