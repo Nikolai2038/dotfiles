@@ -1,19 +1,10 @@
 * {
   margin: 0px;
   padding: 0px;
-  border: 0px;
+  border: none;
   border-radius: 0px;
   background: none;
   font-family: 'Fira Code';
-}
-
-/* I can't find CSS for popups, so instead I play with "*" */
-* {
-  background-color: #000000;
-}
-
-window * {
-  background: none;
 }
 
 /* Make waybar transparent */
@@ -70,8 +61,31 @@ window#waybar {
 
   /* Same gaps */
   margin-bottom: 8px;
+}
 
-  background: transparent;
+#tray menu {
+  background: #000000;
+  color: #ffffff;
+
+  border: solid 1px #aaaaaa;
+
+  /* Add extra padding for menu items to not cover menu borders */
+  padding: 1px;
+
+  border-radius: 8px;
+}
+
+#tray menu * {
+  font-size: 18px;
+}
+
+#tray menu menuitem:hover,
+#tray submenu menuitem:hover {
+  /* background-color: #003300; */
+
+  /* Same block style */
+  background: alpha(#777777, 0.4);
+  color: #ffffff;
 }
 
 #battery {
