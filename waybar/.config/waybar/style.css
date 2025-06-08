@@ -4,15 +4,7 @@
   border: 0px;
   border-radius: 0px;
   background: none;
-}
-
-*.popup {
-  background-color: #1e1e2e;
-  border: 1px solid #89b4fa;
-  border-radius: 6px;
-  padding: 10px;
-  color: #ff0000;
-  font-size: 13px;
+  font-family: 'Fira Code';
 }
 
 /* Make waybar transparent */
@@ -29,10 +21,12 @@ window#waybar {
 
   /* Same block style */
   border-radius: 8px;
-  font-family: "JetbrainsMono Nerd Font";
   font-size: 24px;
   background: alpha(#777777, 0.4);
   color: #ffffff;
+
+  /* We use monospace to keep same width */
+  font-family: 'Fira Code', monospace;
 }
 
 #workspaces button {
@@ -62,12 +56,32 @@ window#waybar {
 }
 
 #tray {
+  /* Right gap */
+  margin-right: 8px;
+
   /* Same gaps */
   margin-bottom: 8px;
 
+  background: transparent;
+}
+
+#language {
+  /* Right gap */
   margin-right: 8px;
 
-  background: transparent;
+  /* Same gaps */
+  margin-bottom: 8px;
+
+  /* Same block style */
+  border-radius: 8px;
+  font-size: 24px;
+  background: alpha(#777777, 0.4);
+  color: #ffffff;
+
+  /* We use monospace to keep same width */
+  font-family: 'Fira Code', monospace;
+
+  padding: 0px 12px;
 }
 
 #clock {
@@ -79,7 +93,6 @@ window#waybar {
 
   /* Same block style */
   border-radius: 8px;
-  font-family: "JetbrainsMono Nerd Font";
   font-size: 24px;
   background: alpha(#777777, 0.4);
   color: #ffffff;

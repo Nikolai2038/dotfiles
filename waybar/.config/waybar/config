@@ -21,12 +21,18 @@
   // ========================================
   "modules-right": [
     "tray",
+    "hyprland/language",
     "clock"
   ],
   "tray": {
     "icon-size": 32,
     "spacing": 8,
     "reverse-direction": true
+  },
+  "hyprland/language": {
+    "format": "{}",
+    "format-en": "EN",
+    "format-ru": "RU"
   },
   "clock": {
     "format": "{:%Y-%m-%d │ %H:%M}",
