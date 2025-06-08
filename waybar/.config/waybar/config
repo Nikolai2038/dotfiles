@@ -21,6 +21,7 @@
   // ========================================
   "modules-right": [
     "tray",
+    "battery",
     "hyprland/language",
     "clock"
   ],
@@ -28,6 +29,23 @@
     "icon-size": 32,
     "spacing": 8,
     "reverse-direction": true
+  },
+  "battery": {
+    "interval": 60,
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon}   {capacity}%",
+    "tooltip": true,
+    "tooltip-format": "Current: {capacity}%. Consuming {power} watts. Time to fully charge: {time}.",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
   },
   "hyprland/language": {
     "format": "{}",

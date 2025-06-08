@@ -7,6 +7,15 @@
   font-family: 'Fira Code';
 }
 
+/* I can't find CSS for popups, so instead I play with "*" */
+* {
+  background-color: #000000;
+}
+
+window * {
+  background: none;
+}
+
 /* Make waybar transparent */
 window#waybar {
   background: transparent;
@@ -65,6 +74,34 @@ window#waybar {
   background: transparent;
 }
 
+#battery {
+  /* Right gap */
+  margin-right: 8px;
+
+  /* Same gaps */
+  margin-bottom: 8px;
+
+  /* Same block style */
+  border-radius: 8px;
+  font-size: 24px;
+  background: alpha(#777777, 0.4);
+  color: #ffffff;
+
+  padding: 0px 10px 0px 12px;
+}
+
+#battery {
+  color: #00aa00;
+}
+
+#battery.warning {
+  color: #ffbb22;
+}
+
+#battery.critical {
+  color: #aa0000;
+}
+
 #language {
   /* Right gap */
   margin-right: 8px;
@@ -97,5 +134,5 @@ window#waybar {
   background: alpha(#777777, 0.4);
   color: #ffffff;
 
-  padding: 0px 12px;
+  padding: 0px 10px 0px 12px;
 }
