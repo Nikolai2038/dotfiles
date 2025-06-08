@@ -1,5 +1,7 @@
 # dotfiles
 
+Dotfiles for my Arch Linux environment.
+
 ## 1. Installation
 
 1. Install required packages:
@@ -15,12 +17,17 @@
         - Hyprland environment:
 
             ```sh
-            sudo pacman --noconfirm --sync --refresh --needed hyprland waybar ttf-font-awesome gsimplecal copyq wl-clip-persist
+            sudo pacman --noconfirm --sync --refresh --needed hyprland hyprpolkitagent qt5-wayland qt6-wayland waybar ttf-font-awesome blueman network-manager-applet gsimplecal copyq wl-clip-persist
             ```
 
             - `hyprland`: Wayland compositor;
+            - `hyprpolkitagent`: Polkit agent;
+            - `qt5-wayland`: Qt5 support for Wayland;
+            - `qt6-wayland`: Qt6 support for Wayland;
             - `waybar`: Panel;
             - `ttf-font-awesome`: Font with icons;
+            - `blueman`: Applet to manage Bluetooth connections;
+            - `network-manager-applet`: Applet to manage network connections;
             - `gsimplecal`: Calendar;
             - `copyq`: Clipboard manager;
             - `wl-clip-persist`: To [persist clipboard after program was closed](https://wiki.hyprland.org/Useful-Utilities/Clipboard-Managers/).
@@ -75,3 +82,5 @@
         stow --no-folding --target="${HOME}" --delete hyprland && \
         stow --no-folding --target="${HOME}" --delete waybar && \
         stow --no-folding --target="${HOME}" --delete copyq
+
+3. Remove cloned repository.
