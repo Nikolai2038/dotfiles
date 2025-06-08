@@ -23,7 +23,8 @@
   ],
   "tray": {
     "icon-size": 32,
-    "spacing": 8
+    "spacing": 8,
+    "reverse-direction": true
   },
   "clock#time": {
     "format": "<tt>{:%H:%M}</tt>",

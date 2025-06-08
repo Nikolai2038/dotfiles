@@ -3,26 +3,28 @@ window#waybar {
   background: transparent;
 }
 
+#workspaces button:first-child {
+  margin-left: 8px;
+}
+
+#clock.date:last-child {
+  margin-right: 8px;
+}
+
 #workspaces button {
   /* Same block style */
   margin-top: 4px;
-  padding-left: 8px;
-  padding-right: 8px;
-  border-radius: 8px;
+  padding: 0px 12px;
+  border-radius: 64px;
   margin-left: 8px;
   font-family: "JetbrainsMono Nerd Font";
   font-size: 24px;
-
-	background: white;
-	color: #161320;
-}
-
-#workspaces button:first-child {
-  margin-left: 0px;
+  background: alpha(#777777, 0.6);
+  color: #ffffff;
 }
 
 #workspaces button.active {
-  background: green;
+  background: alpha(#007700, 0.6);
 }
 
 #tray {
@@ -35,27 +37,23 @@ window#waybar {
 #clock.time {
   /* Same block style */
   margin-top: 4px;
-  padding-left: 8px;
-  padding-right: 8px;
-  border-radius: 8px;
+  padding: 0px 12px;
+  border-radius: 64px;
   margin-left: 8px;
   font-family: "JetbrainsMono Nerd Font";
   font-size: 24px;
-
-  background: #abe9b3;
-  color: #161320;
+  background: alpha(#777777, 0.6);
+  color: #ffffff;
 }
 
 #clock.date {
   /* Same block style */
   margin-top: 4px;
-  padding-left: 8px;
-  padding-right: 8px;
-  border-radius: 8px;
+  padding: 0px 12px;
+  border-radius: 64px;
   margin-left: 8px;
   font-family: "JetbrainsMono Nerd Font";
   font-size: 24px;
-
-  background: #abe9b3;
-  color: #161320;
+  background: alpha(#777777, 0.6);
+  color: #ffffff;
 }
