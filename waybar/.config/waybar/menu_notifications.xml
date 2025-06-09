@@ -2,6 +2,11 @@
 <interface>
   <object class="GtkMenu" id="menu">
     <child>
+      <object class="GtkMenuItem" id="pause_unpause">
+        <property name="label">Pause/Unpause notifications</property>
+      </object>
+    </child>
+    <child>
       <object class="GtkMenuItem" id="pop_latest">
         <property name="label">Pop up latest notification</property>
       </object>

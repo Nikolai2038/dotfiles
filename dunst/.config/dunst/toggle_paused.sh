@@ -6,13 +6,9 @@ function main() {
 
   if [ "${is_paused}" = "true" ]; then
     dunstctl set-paused false || return "$?"
+  else
+    dunstctl set-paused true || return "$?"
   fi
-
-  local number=""
-  until [ "${number}" = "0" ]; do
-    dunstctl history-pop || return "$?"
-    number="$(dunstctl history | jq '.data[] | length')" || return "$?"
-  done
 }
 
 main "$@" || exit "$?"

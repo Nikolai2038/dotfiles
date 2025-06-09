@@ -4,11 +4,7 @@ Dotfiles for my Arch Linux environment.
 
 ## 1. Description
 
-### 1.1. Notifications
-
-- Left click: Pop latest notification from history;
-- Middle click: Pop all notifications from history;
-- Right click: Show prompt to clear notifications history.
+In work...
 
 ## 2. Installation
 

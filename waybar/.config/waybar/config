@@ -330,9 +330,8 @@
   "custom/notifications": {
     "exec": "~/.config/dunst/echo_number_of_notifications.sh",
     "interval": 1,
-    // TODO: 🔕
-    "format": "🔔{}",
-    "on-click": "dunstctl history-pop",
+    "format": "{}",
+    "on-click": "dunstctl set-paused false && dunstctl history-pop",
     "on-click-middle": "~/.config/dunst/pop_all_notifications.sh",
     // ----------------------------------------
     // Menu
@@ -340,7 +339,8 @@
     "menu": "on-click-right",
     "menu-file": "~/.config/waybar/menu_notifications.xml",
     "menu-actions": {
-      "pop_latest": "dunstctl history-pop",
+      "pause_unpause": "~/.config/dunst/toggle_paused.sh",
+      "pop_latest": "dunstctl set-paused false && dunstctl history-pop",
       "pop_all": "~/.config/dunst/pop_all_notifications.sh",
       "clear": "~/.config/dunst/remove_all_notifications.sh"
     },
