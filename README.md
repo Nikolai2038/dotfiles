@@ -25,7 +25,7 @@ Dotfiles for my Arch Linux environment.
         - Hyprland environment:
 
             ```sh
-            sudo pacman --noconfirm --sync --refresh --needed hyprland hyprpolkitagent qt5-wayland qt6-wayland waybar ttf-font-awesome blueman network-manager-applet gsimplecal copyq wl-clip-persist dunst zenity jq hyprpaper
+            sudo pacman --noconfirm --sync --refresh --needed hyprland hyprpolkitagent qt5-wayland qt6-wayland waybar ttf-font-awesome blueman network-manager-applet gsimplecal copyq wl-clip-persist dunst zenity jq hyprpaper archlinux-xdg-menu
             ```
 
             - `hyprland`: Wayland compositor;
@@ -42,7 +42,8 @@ Dotfiles for my Arch Linux environment.
             - `dunst`: Notification daemon;
             - `zenity`: To show nice message prompts (Yes/No) on some waybar actions (for example, to clear notifications history);
             - `jq`: To parse JSON output from `dunstctl` and get notifications count;
-            - `hyprpaper`: Wallpaper engine.
+            - `hyprpaper`: Wallpaper engine;
+            - `archlinux-xdg-menu`: For fix "Open with" menu in Dolphin.
 
 2. Clone this repository:
 
