@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <object class="GtkMenu" id="menu">
+    <child>
+      <object class="GtkMenuItem" id="toggle">
+        <property name="label">Toggle mute/unmute</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkMenuItem" id="increase">
+        <property name="label">Increase volume by 5%</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkMenuItem" id="decrease">
+        <property name="label">Decrease volume by 5%</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkMenuItem" id="set_to_100">
+        <property name="label">Set volume to 100%</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkMenuItem" id="set_to_75">
+        <property name="label">Set volume to 75%</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkMenuItem" id="set_to_50">
+        <property name="label">Set volume to 50%</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkMenuItem" id="set_to_25">
+        <property name="label">Set volume to 25%</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkMenuItem" id="configure">
+        <property name="label">Configure output devices...</property>
+      </object>
+    </child>
+  </object>
+</interface>

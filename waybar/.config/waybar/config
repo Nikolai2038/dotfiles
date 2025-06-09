@@ -46,7 +46,11 @@
     // When fully charged and plugged - status will be "Not charging" - it is actually "plugged" here.
     // ----------------------------------------
     "format-full": "  {capacity}%",
-    "format-plugged": "  {capacity}%"
+    "format-plugged": "  {capacity}%",
+    // ----------------------------------------
+    // Tooltip
+    // ----------------------------------------
+    "tooltip": true
     // ----------------------------------------
   },
   "cpu": {
@@ -54,24 +58,32 @@
     "format": "  {usage}%",
     "format-alt": "  {usage}% │ {avg_frequency} GHz",
     "on-click": "mode",
-    "tooltip": false,
     "states": {
       "good": 0,
       "warning": 70,
       "critical": 90
-    }
+    },
+    // ----------------------------------------
+    // Tooltip
+    // ----------------------------------------
+    "tooltip": false
+    // ----------------------------------------
   },
   "memory": {
     "interval": 10,
     "format": " {percentage}%",
     "format-alt": " {percentage}% │ {used:0.2f}/{total:0.2f} GiB",
     "on-click": "mode",
-    "tooltip": false,
     "states": {
       "good": 0,
       "warning": 70,
       "critical": 90
-    }
+    },
+    // ----------------------------------------
+    // Tooltip
+    // ----------------------------------------
+    "tooltip": false
+    // ----------------------------------------
   },
   "disk#rootfs": {
     "interval": 60,
@@ -79,12 +91,16 @@
     "format-alt": "⛁ {percentage_used}% │ {path} │ {used} / {total}",
     "on-click": "mode",
     "path": "/mnt/rootfs",
-    "tooltip": false,
     "states": {
       "good": 0,
       "warning": 70,
       "critical": 90
-    }
+    },
+    // ----------------------------------------
+    // Tooltip
+    // ----------------------------------------
+    "tooltip": false
+    // ----------------------------------------
   },
   "disk#homefs": {
     "interval": 60,
@@ -92,12 +108,16 @@
     "format-alt": "⛁ {percentage_used}% │ {path} │ {used} / {total}",
     "on-click": "mode",
     "path": "/mnt/homefs",
-    "tooltip": false,
     "states": {
       "good": 0,
       "warning": 70,
       "critical": 90
-    }
+    },
+    // ----------------------------------------
+    // Tooltip
+    // ----------------------------------------
+    "tooltip": false
+    // ----------------------------------------
   },
   // ========================================
   // Center
@@ -110,15 +130,25 @@
   "custom/wallpaper": {
     "format": " 🖼️ {}",
     "on-click": "~/.config/waybar/change_wallpapers.sh",
+    // ----------------------------------------
+    // Tooltip
+    // ----------------------------------------
     "tooltip": true,
     "tooltip-format": "Change current wallpapers to random ones"
+    // ----------------------------------------
   },
   "clock": {
     "format": "{:%Y-%m-%d │ %H:%M}",
-    "tooltip-format": "{:%d %B %Y, %A │ %H:%M:%S}",
+    "format-alt": "{:%Y-%m-%d │ %A │ %H:%M:%S}",
+    "on-click": "mode",
     "interval": 1,
     // Open calendar on click
-    "on-click": "gsimplecal"
+    "on-click-middle": "gsimplecal",
+    // ----------------------------------------
+    // Tooltip
+    // ----------------------------------------
+    "tooltip": false
+    // ----------------------------------------
   },
   "hyprland/language": {
     "format": "{}",
@@ -142,25 +172,33 @@
     "spacing": 8,
     "reverse-direction": true
   },
-  "custom/notifications": {
-    "exec": "~/.config/dunst/echo_number_of_notifications.sh",
-    "interval": 1,
-    // TODO: 🔕
-    "format": "🔔{}",
-    "on-click": "dunstctl history-pop",
-    "on-click-right": "~/.config/dunst/remove_all_notifications.sh",
-    "on-click-middle": "~/.config/dunst/pop_all_notifications.sh",
-    "tooltip": false
-  },
   "custom/brightness": {
-    "format": "☀ {}%",
+    "format": "☀",
+    "format-alt": "☀ {}%",
+    "on-click": "mode",
     "exec": "echo \"$(($(brightnessctl get) * 100 / $(brightnessctl max)))\"",
     "interval": 1,
     "on-scroll-up": "brightnessctl set 5%+",
     // Set min brightness to 1%
     "on-scroll-down": "[ \"$(($(brightnessctl get) * 100 / $(brightnessctl max)))\" -gt \"5\" ] && brightnessctl set 5%- || brightnessctl set 1%",
-    "on-click-right": "brightnessctl set 50%",
+    // ----------------------------------------
+    // Menu
+    // ----------------------------------------
+    "menu": "on-click-right",
+    "menu-file": "~/.config/waybar/menu_brightness.xml",
+    "menu-actions": {
+      "increase": "brightnessctl set 5%+",
+      // Set min brightness to 1%
+      "decrease": "[ \"$(($(brightnessctl get) * 100 / $(brightnessctl max)))\" -gt \"5\" ] && brightnessctl set 5%- || brightnessctl set 1%",
+      "set_to_max": "brightnessctl set 100%",
+      "set_to_average": "brightnessctl set 50%",
+      "set_to_min": "brightnessctl set 1%"
+    },
+    // ----------------------------------------
+    // Tooltip
+    // ----------------------------------------
     "tooltip": false
+    // ----------------------------------------
   },
   "pulseaudio#input": {
     "format-source": " {volume}%",
@@ -170,9 +208,27 @@
     "on-scroll-up": "pactl set-source-volume @DEFAULT_SOURCE@ +5%",
     "on-scroll-down": "pactl set-source-volume @DEFAULT_SOURCE@ -5%",
     "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
-    "on-click-right": "pactl set-source-volume @DEFAULT_SOURCE@ 100%",
     "on-click-middle": "pavucontrol --tab 4",
+    // ----------------------------------------
+    // Menu
+    // ----------------------------------------
+    "menu": "on-click-right",
+    "menu-file": "~/.config/waybar/menu_pulseaudio_input.xml",
+    "menu-actions": {
+      "toggle": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
+      "increase": "pactl set-source-volume @DEFAULT_SOURCE@ +5%",
+      "decrease": "pactl set-source-volume @DEFAULT_SOURCE@ -5%",
+      "set_to_100": "pactl set-source-volume @DEFAULT_SOURCE@ 100%",
+      "set_to_75": "pactl set-source-volume @DEFAULT_SOURCE@ 75%",
+      "set_to_50": "pactl set-source-volume @DEFAULT_SOURCE@ 50%",
+      "set_to_25": "pactl set-source-volume @DEFAULT_SOURCE@ 25%",
+      "configure": "pavucontrol --tab 4"
+    },
+    // ----------------------------------------
+    // Tooltip
+    // ----------------------------------------
     "tooltip": false
+    // ----------------------------------------
   },
   "pulseaudio#output": {
     // Icon 1:
@@ -187,8 +243,8 @@
         "🔊"
       ]
     },
-    // Icon 2:
-    // "format": "{icon}   {volume}%",
+    // // Icon 2:
+    // "format": "{icon}",
     // "format-muted": "   {volume}%",
     // "format-bluetooth": " {icon}   {volume}%",
     // "format-bluetooth-muted": "    {volume}%",
@@ -203,8 +259,51 @@
     "scroll-step": 5,
     "smooth-scrolling-threshold": 1,
     "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-    "on-click-right": "pactl set-sink-volume @DEFAULT_SINK@ 50%",
-    "on-click-middle": "pavucontrol --tab 3"
+    "on-click-middle": "pavucontrol --tab 3",
+    // ----------------------------------------
+    // Menu
+    // ----------------------------------------
+    "menu": "on-click-right",
+    "menu-file": "~/.config/waybar/menu_pulseaudio_output.xml",
+    "menu-actions": {
+      "toggle": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+      "increase": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
+      "decrease": "pactl set-sink-volume @DEFAULT_SINK@ -5%",
+      "set_to_100": "pactl set-sink-volume @DEFAULT_SINK@ 100%",
+      "set_to_75": "pactl set-sink-volume @DEFAULT_SINK@ 75%",
+      "set_to_50": "pactl set-sink-volume @DEFAULT_SINK@ 50%",
+      "set_to_25": "pactl set-sink-volume @DEFAULT_SINK@ 25%",
+      "configure": "pavucontrol --tab 3"
+    },
+    // ----------------------------------------
+    // Tooltip
+    // ----------------------------------------
+    "tooltip": true,
+    "tooltip-format": "{desc}"
+    // ----------------------------------------
+  },
+  "custom/notifications": {
+    "exec": "~/.config/dunst/echo_number_of_notifications.sh",
+    "interval": 1,
+    // TODO: 🔕
+    "format": "🔔{}",
+    "on-click": "dunstctl history-pop",
+    "on-click-middle": "~/.config/dunst/pop_all_notifications.sh",
+    // ----------------------------------------
+    // Menu
+    // ----------------------------------------
+    "menu": "on-click-right",
+    "menu-file": "~/.config/waybar/menu_notifications.xml",
+    "menu-actions": {
+      "pop_latest": "dunstctl history-pop",
+      "pop_all": "~/.config/dunst/pop_all_notifications.sh",
+      "clear": "~/.config/dunst/remove_all_notifications.sh"
+    },
+    // ----------------------------------------
+    // Tooltip
+    // ----------------------------------------
+    "tooltip": false
+    // ----------------------------------------
   }
   // ========================================
 }
