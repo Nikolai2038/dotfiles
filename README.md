@@ -25,7 +25,7 @@ Dotfiles for my Arch Linux environment.
         - Hyprland environment:
 
             ```sh
-            sudo pacman --noconfirm --sync --refresh --needed hyprland hyprpolkitagent qt5-wayland qt6-wayland waybar ttf-font-awesome blueman network-manager-applet gsimplecal copyq wl-clip-persist dunst zenity jq
+            sudo pacman --noconfirm --sync --refresh --needed hyprland hyprpolkitagent qt5-wayland qt6-wayland waybar ttf-font-awesome blueman network-manager-applet gsimplecal copyq wl-clip-persist dunst zenity jq hyprpaper
             ```
 
             - `hyprland`: Wayland compositor;
@@ -41,7 +41,8 @@ Dotfiles for my Arch Linux environment.
             - `wl-clip-persist`: To [persist clipboard contents after program was closed](https://wiki.hyprland.org/Useful-Utilities/Clipboard-Managers/);
             - `dunst`: Notification daemon;
             - `zenity`: To show nice message prompts (Yes/No) on some waybar actions (for example, to clear notifications history);
-            - `jq`: To parse JSON output from `dunstctl` and get notifications count.
+            - `jq`: To parse JSON output from `dunstctl` and get notifications count;
+            - `hyprpaper`: Wallpaper engine.
 
 2. Clone this repository:
 

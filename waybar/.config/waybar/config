@@ -20,9 +20,30 @@
   // Center
   // ========================================
   "modules-center": [
+    "custom/wallpaper",
     "clock",
     "hyprland/language"
   ],
+  "custom/wallpaper": {
+    "format": " 🖼️ {}",
+    "on-click": "~/.config/waybar/change_wallpapers.sh",
+    "tooltip": true,
+    "tooltip-format": "Change current wallpapers to random ones"
+  },
+  "clock": {
+    "format": "{:%Y-%m-%d │ %H:%M}",
+    "tooltip-format": "{:%d %B %Y, %A │ %H:%M:%S}",
+    "interval": 1,
+    // Open calendar on click
+    "on-click": "gsimplecal"
+  },
+  "hyprland/language": {
+    "format": "{}",
+    "format-en": "EN",
+    "format-ru": "RU",
+    "on-click": "hyprctl switchxkblayout current next",
+    "on-click-right": "hyprctl switchxkblayout current prev"
+  },
   // ========================================
   // Right
   // ========================================
@@ -126,20 +147,6 @@
     "format-full": "  {capacity}%",
     "format-plugged": "  {capacity}%"
     // ----------------------------------------
-  },
-  "hyprland/language": {
-    "format": "{}",
-    "format-en": "EN",
-    "format-ru": "RU",
-    "on-click": "hyprctl switchxkblayout current next",
-    "on-click-right": "hyprctl switchxkblayout current prev"
-  },
-  "clock": {
-    "format": "{:%Y-%m-%d │ %H:%M}",
-    "tooltip-format": "{:%d %B %Y, %A │ %H:%M:%S}",
-    "interval": 1,
-    // Open calendar on click
-    "on-click": "gsimplecal"
   }
   // ========================================
 }
