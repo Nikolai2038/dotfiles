@@ -12,6 +12,16 @@ window#waybar {
   background: transparent;
 }
 
+/* Tooltip popups */
+tooltip {
+  background-color: #222222;
+  color: #ffffff;
+  border-radius: 4px;
+  border: 1px solid #444444;
+  padding: 2px 4px;
+  font-size: 16px;
+}
+
 #workspaces,
 #cpu,
 #memory,

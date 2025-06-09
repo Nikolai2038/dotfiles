@@ -66,7 +66,8 @@
     // ----------------------------------------
     // Tooltip
     // ----------------------------------------
-    "tooltip": false
+    "tooltip": true,
+    "tooltip-format": "  {usage}% │ {avg_frequency} GHz"
     // ----------------------------------------
   },
   "memory": {
@@ -82,7 +83,8 @@
     // ----------------------------------------
     // Tooltip
     // ----------------------------------------
-    "tooltip": false
+    "tooltip": true,
+    "tooltip-format": " {percentage}% │ {used:0.2f}/{total:0.2f} GiB"
     // ----------------------------------------
   },
   "disk#rootfs": {
@@ -99,7 +101,8 @@
     // ----------------------------------------
     // Tooltip
     // ----------------------------------------
-    "tooltip": false
+    "tooltip": true,
+    "tooltip-format": "⛁ {percentage_used}% │ {path} │ {used} / {total}"
     // ----------------------------------------
   },
   "disk#homefs": {
@@ -116,7 +119,8 @@
     // ----------------------------------------
     // Tooltip
     // ----------------------------------------
-    "tooltip": false
+    "tooltip": true,
+    "tooltip-format": "⛁ {percentage_used}% │ {path} │ {used} / {total}"
     // ----------------------------------------
   },
   // ========================================
@@ -147,7 +151,8 @@
     // ----------------------------------------
     // Tooltip
     // ----------------------------------------
-    "tooltip": false
+    "tooltip": true,
+    "tooltip-format": "{:%Y-%m-%d │ %A │ %H:%M:%S}"
     // ----------------------------------------
   },
   "hyprland/language": {
@@ -155,7 +160,13 @@
     "format-en": "EN",
     "format-ru": "RU",
     "on-click": "hyprctl switchxkblayout current next",
-    "on-click-right": "hyprctl switchxkblayout current prev"
+    "on-click-right": "hyprctl switchxkblayout current prev",
+    // ----------------------------------------
+    // Tooltip
+    // ----------------------------------------
+    "tooltip": true,
+    "tooltip-format": "Change language"
+    // ----------------------------------------
   },
   // ========================================
   // Right
@@ -197,7 +208,8 @@
     // ----------------------------------------
     // Tooltip
     // ----------------------------------------
-    "tooltip": false
+    "tooltip": true,
+    "tooltip-format": "Monitor brightness: {}%"
     // ----------------------------------------
   },
   "pulseaudio#input": {
@@ -227,7 +239,8 @@
     // ----------------------------------------
     // Tooltip
     // ----------------------------------------
-    "tooltip": false
+    "tooltip": true,
+    "tooltip-format": "Microphone sensitivity: {format_source}"
     // ----------------------------------------
   },
   "pulseaudio#output": {
@@ -279,7 +292,7 @@
     // Tooltip
     // ----------------------------------------
     "tooltip": true,
-    "tooltip-format": "{desc}"
+    "tooltip-format": "Volume: {volume}%. Device: {desc}"
     // ----------------------------------------
   },
   "custom/notifications": {
@@ -302,7 +315,8 @@
     // ----------------------------------------
     // Tooltip
     // ----------------------------------------
-    "tooltip": false
+    "tooltip": true,
+    "tooltip-format": "{} new notifications"
     // ----------------------------------------
   }
   // ========================================
