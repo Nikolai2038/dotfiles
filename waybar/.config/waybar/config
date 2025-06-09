@@ -46,7 +46,7 @@
     // When fully charged and plugged - status will be "Not charging" - it is actually "plugged" here.
     // ----------------------------------------
     "format-full": "  {capacity}%",
-    "format-plugged": "  {capacity}%",
+    "format-plugged": "  {capacity}%"
     // ----------------------------------------
   },
   "cpu": {
@@ -132,6 +132,7 @@
   // ========================================
   "modules-right": [
     "tray",
+    "custom/brightness",
     "pulseaudio#input",
     "pulseaudio#output",
     "custom/notifications"
@@ -151,18 +152,27 @@
     "on-click-middle": "~/.config/dunst/pop_all_notifications.sh",
     "tooltip": false
   },
+  "custom/brightness": {
+    "format": "☀ {}%",
+    "exec": "echo \"$(($(brightnessctl get) * 100 / $(brightnessctl max)))\"",
+    "interval": 1,
+    "on-scroll-up": "brightnessctl set 5%+",
+    // Set min brightness to 1%
+    "on-scroll-down": "[ \"$(($(brightnessctl get) * 100 / $(brightnessctl max)))\" -gt \"5\" ] && brightnessctl set 5%- || brightnessctl set 1%",
+    "on-click-right": "brightnessctl set 50%",
+    "tooltip": false
+  },
   "pulseaudio#input": {
     "format-source": " {volume}%",
     "format-source-muted": " {volume}%",
     "format": "{format_source}",
-    // We don't use input widget for output changes
-    "scroll-step": 0,
     // Define our own actions to change microphone instead of audio
     "on-scroll-up": "pactl set-source-volume @DEFAULT_SOURCE@ +5%",
     "on-scroll-down": "pactl set-source-volume @DEFAULT_SOURCE@ -5%",
     "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
     "on-click-right": "pactl set-source-volume @DEFAULT_SOURCE@ 100%",
-    "on-click-middle": "pavucontrol --tab 4"
+    "on-click-middle": "pavucontrol --tab 4",
+    "tooltip": false
   },
   "pulseaudio#output": {
     // Icon 1:

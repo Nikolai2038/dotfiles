@@ -21,10 +21,11 @@ window#waybar {
 #clock,
 #language,
 #tray,
-#custom-notifications,
 #battery,
+#custom-brightness,
 #pulseaudio.input,
-#pulseaudio.output {
+#pulseaudio.output,
+#custom-notifications {
   /* Same gaps */
   margin-bottom: 4px;
   margin-left: 2px;
