@@ -23,6 +23,8 @@ tooltip {
 }
 
 #workspaces,
+#custom-power,
+#battery,
 #cpu,
 #memory,
 #disk.rootfs,
@@ -31,7 +33,6 @@ tooltip {
 #clock,
 #language,
 #tray,
-#battery,
 #custom-brightness,
 #pulseaudio.input,
 #pulseaudio.output,
@@ -50,18 +51,34 @@ tooltip {
   padding: 0px 6px;
 }
 
+#custom-power,
+#battery,
 #cpu,
 #memory,
 #disk.rootfs,
 #disk.homefs,
 #custom-wallpaper,
 #language,
-#battery,
 #custom-brightness,
 #pulseaudio.input,
 #pulseaudio.output,
 #custom-notifications {
   font-size: 16px;
+}
+
+/* Make two blocks look like one */
+#custom-power {
+  margin-right: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  padding-right: 0;
+}
+
+#battery {
+  margin-left: 0;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  padding-left: 0;
 }
 
 #workspaces {

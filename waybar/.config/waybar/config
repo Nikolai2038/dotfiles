@@ -8,6 +8,7 @@
   // ========================================
   "modules-left": [
     "hyprland/workspaces",
+    "custom/power",
     "battery",
     "cpu",
     "memory",
@@ -16,6 +17,27 @@
   ],
   "hyprland/workspaces": {
     "format": "{name}"
+  },
+  "custom/power": {
+    "exec": "~/.config/waybar/get_power_icon.sh",
+    "interval": 1,
+    "format": "{} ",
+    // ----------------------------------------
+    // Menu
+    // ----------------------------------------
+    "menu": "on-click-right",
+    "menu-file": "~/.config/waybar/menu_power.xml",
+    "menu-actions": {
+      "power-saver": "powerprofilesctl set power-saver",
+      "balanced": "powerprofilesctl set balanced",
+      "performance": "powerprofilesctl set performance"
+    },
+    // ----------------------------------------
+    // Tooltip
+    // ----------------------------------------
+    "tooltip": true,
+    "tooltip-format": "{}"
+    // ----------------------------------------
   },
   "battery": {
     "interval": 1,
@@ -47,6 +69,16 @@
     // ----------------------------------------
     "format-full": "  {capacity}%",
     "format-plugged": "  {capacity}%",
+    // ----------------------------------------
+    // Menu
+    // ----------------------------------------
+    "menu": "on-click-right",
+    "menu-file": "~/.config/waybar/menu_power.xml",
+    "menu-actions": {
+      "power-saver": "powerprofilesctl set power-saver",
+      "balanced": "powerprofilesctl set balanced",
+      "performance": "powerprofilesctl set performance"
+    },
     // ----------------------------------------
     // Tooltip
     // ----------------------------------------
