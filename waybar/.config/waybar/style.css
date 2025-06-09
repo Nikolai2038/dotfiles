@@ -22,11 +22,13 @@ window#waybar {
 #language,
 #tray,
 #custom-notifications,
-#battery {
+#battery,
+#pulseaudio.input,
+#pulseaudio.output {
   /* Same gaps */
-  margin-bottom: 8px;
-  margin-left: 4px;
-  margin-right: 4px;
+  margin-bottom: 4px;
+  margin-left: 2px;
+  margin-right: 2px;
 
   /* Same block style */
   border-radius: 8px;
@@ -34,17 +36,17 @@ window#waybar {
   background: alpha(#444444, 0.8);
   color: #ffffff;
 
-  padding: 0px 12px;
+  padding: 0px 6px;
 }
 
 #workspaces {
   padding: 0;
-  margin-left: 8px;
+  margin-left: 4px;
 }
 
 #workspaces button {
   margin-top: 0px;
-  padding: 0px 12px;
+  padding: 0px 6px;
 
   /* Borders between workspaces */
   border-right: solid 1px #aaaaaa;
@@ -65,6 +67,32 @@ window#waybar {
 
 #workspaces button.active {
   background: alpha(#007700, 0.4);
+}
+
+#battery,
+#cpu,
+#memory,
+#disk.rootfs,
+#disk.homefs{
+  color: #ffffff;
+}
+
+#battery.warning,
+#cpu.warning,
+#memory.warning,
+#disk.rootfs.warning,
+#disk.homefs.warning {
+  color: #ffbb22;
+}
+
+#battery.critical,
+#cpu.critical,
+#memory.critical,
+#disk.rootfs.critical,
+#disk.homefs.critical,
+#pulseaudio.input.source-muted,
+#pulseaudio.output.muted {
+  color: #aa0000;
 }
 
 #language {
@@ -101,30 +129,6 @@ window#waybar {
   color: #ffffff;
 }
 
-#battery {
-  margin-right: 8px;
-}
-
-#cpu,
-#memory,
-#disk.rootfs,
-#disk.homefs,
-#battery {
-  color: #ffffff;
-}
-
-#cpu.warning,
-#memory.warning,
-#disk.rootfs.warning,
-#disk.homefs.warning,
-#battery.warning {
-  color: #ffbb22;
-}
-
-#cpu.critical,
-#memory.critical,
-#disk.rootfs.critical,
-#disk.homefs.critical,
-#battery.critical {
-  color: #aa0000;
+#custom-notifications {
+  margin-right: 4px;
 }

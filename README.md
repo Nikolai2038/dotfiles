@@ -25,7 +25,8 @@ Dotfiles for my Arch Linux environment.
         - Hyprland environment:
 
             ```sh
-            sudo pacman --noconfirm --sync --refresh --needed hyprland hyprpolkitagent qt5-wayland qt6-wayland waybar ttf-font-awesome blueman network-manager-applet gsimplecal copyq wl-clip-persist dunst zenity jq hyprpaper archlinux-xdg-menu
+            sudo pacman --noconfirm --sync --refresh --needed hyprland hyprpolkitagent qt5-wayland qt6-wayland waybar ttf-font-awesome blueman network-manager-applet gsimplecal copyq wl-clip-persist dunst zenity jq hyprpaper archlinux-xdg-menu power-profiles-daemon pavucontrol playerctl brightnessctl && \
+            sudo systemctl enable --now power-profiles-daemon.service
             ```
 
             - `hyprland`: Wayland compositor;
@@ -43,7 +44,11 @@ Dotfiles for my Arch Linux environment.
             - `zenity`: To show nice message prompts (Yes/No) on some waybar actions (for example, to clear notifications history);
             - `jq`: To parse JSON output from `dunstctl` and get notifications count;
             - `hyprpaper`: Wallpaper engine;
-            - `archlinux-xdg-menu`: For fix "Open with" menu in Dolphin.
+            - `archlinux-xdg-menu`: For fix "Open with" menu in Dolphin;
+            - `power-profiles-daemon`: Manage power profiles;
+            - `pavucontrol`: Audio management (input and outputs);
+            - `playerctl`: Media controls;
+            - `brightnessctl`: To control screen brightness.
 
 2. Clone this repository:
 

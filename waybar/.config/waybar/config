@@ -8,6 +8,7 @@
   // ========================================
   "modules-left": [
     "hyprland/workspaces",
+    "battery",
     "cpu",
     "memory",
     "disk#rootfs",
@@ -16,55 +17,37 @@
   "hyprland/workspaces": {
     "format": "{name}"
   },
-  // ========================================
-  // Center
-  // ========================================
-  "modules-center": [
-    "custom/wallpaper",
-    "clock",
-    "hyprland/language"
-  ],
-  "custom/wallpaper": {
-    "format": " 🖼️ {}",
-    "on-click": "~/.config/waybar/change_wallpapers.sh",
-    "tooltip": true,
-    "tooltip-format": "Change current wallpapers to random ones"
-  },
-  "clock": {
-    "format": "{:%Y-%m-%d │ %H:%M}",
-    "tooltip-format": "{:%d %B %Y, %A │ %H:%M:%S}",
+  "battery": {
     "interval": 1,
-    // Open calendar on click
-    "on-click": "gsimplecal"
-  },
-  "hyprland/language": {
-    "format": "{}",
-    "format-en": "EN",
-    "format-ru": "RU",
-    "on-click": "hyprctl switchxkblayout current next",
-    "on-click-right": "hyprctl switchxkblayout current prev"
-  },
-  // ========================================
-  // Right
-  // ========================================
-  "modules-right": [
-    "tray",
-    "custom/notifications",
-    "battery"
-  ],
-  "tray": {
-    "icon-size": 32,
-    "spacing": 8,
-    "reverse-direction": true
-  },
-  "custom/notifications": {
-    "exec": "~/.config/dunst/echo_number_of_notifications.sh",
-    "interval": 1,
-    "format": "🔔{}",
-    "on-click": "dunstctl history-pop",
-    "on-click-right": "~/.config/dunst/remove_all_notifications.sh",
-    "on-click-middle": "~/.config/dunst/pop_all_notifications.sh",
-    "tooltip": false
+    "states": {
+      "good": 100,
+      "warning": 30,
+      "critical": 15
+    },
+    "on-click": "mode",
+    // ----------------------------------------
+    // Discharging state
+    // ----------------------------------------
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "format": "{icon}   {capacity}%",
+    "format-alt": "{icon}   {capacity}% │ {power:0.2f} watts",
+    // ----------------------------------------
+    // Charging state
+    // ----------------------------------------
+    "format-charging": " {capacity}%",
+    // ----------------------------------------
+    // Plugged state.
+    // When fully charged and plugged - status will be "Not charging" - it is actually "plugged" here.
+    // ----------------------------------------
+    "format-full": "  {capacity}%",
+    "format-plugged": "  {capacity}%",
+    // ----------------------------------------
   },
   "cpu": {
     "interval": 10,
@@ -116,37 +99,102 @@
       "critical": 90
     }
   },
-  "battery": {
+  // ========================================
+  // Center
+  // ========================================
+  "modules-center": [
+    "custom/wallpaper",
+    "clock",
+    "hyprland/language"
+  ],
+  "custom/wallpaper": {
+    "format": " 🖼️ {}",
+    "on-click": "~/.config/waybar/change_wallpapers.sh",
+    "tooltip": true,
+    "tooltip-format": "Change current wallpapers to random ones"
+  },
+  "clock": {
+    "format": "{:%Y-%m-%d │ %H:%M}",
+    "tooltip-format": "{:%d %B %Y, %A │ %H:%M:%S}",
     "interval": 1,
-    "states": {
-      "good": 100,
-      "warning": 30,
-      "critical": 15
+    // Open calendar on click
+    "on-click": "gsimplecal"
+  },
+  "hyprland/language": {
+    "format": "{}",
+    "format-en": "EN",
+    "format-ru": "RU",
+    "on-click": "hyprctl switchxkblayout current next",
+    "on-click-right": "hyprctl switchxkblayout current prev"
+  },
+  // ========================================
+  // Right
+  // ========================================
+  "modules-right": [
+    "tray",
+    "pulseaudio#input",
+    "pulseaudio#output",
+    "custom/notifications"
+  ],
+  "tray": {
+    "icon-size": 32,
+    "spacing": 8,
+    "reverse-direction": true
+  },
+  "custom/notifications": {
+    "exec": "~/.config/dunst/echo_number_of_notifications.sh",
+    "interval": 1,
+    // TODO: 🔕
+    "format": "🔔{}",
+    "on-click": "dunstctl history-pop",
+    "on-click-right": "~/.config/dunst/remove_all_notifications.sh",
+    "on-click-middle": "~/.config/dunst/pop_all_notifications.sh",
+    "tooltip": false
+  },
+  "pulseaudio#input": {
+    "format-source": " {volume}%",
+    "format-source-muted": " {volume}%",
+    "format": "{format_source}",
+    // We don't use input widget for output changes
+    "scroll-step": 0,
+    // Define our own actions to change microphone instead of audio
+    "on-scroll-up": "pactl set-source-volume @DEFAULT_SOURCE@ +5%",
+    "on-scroll-down": "pactl set-source-volume @DEFAULT_SOURCE@ -5%",
+    "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
+    "on-click-right": "pactl set-source-volume @DEFAULT_SOURCE@ 100%",
+    "on-click-middle": "pavucontrol --tab 4"
+  },
+  "pulseaudio#output": {
+    // Icon 1:
+    "format": "{icon} {volume}%",
+    "format-muted": "🔇 {volume}%",
+    "format-bluetooth": " {icon} {volume}%",
+    "format-bluetooth-muted": " 🔇 {volume}%",
+    "format-icons": {
+      "default": [
+        "🔈",
+        "🔉",
+        "🔊"
+      ]
     },
-    "on-click": "mode",
-    // ----------------------------------------
-    // Discharging state
-    // ----------------------------------------
-    "format-icons": [
-      "",
-      "",
-      "",
-      "",
-      ""
-    ],
-    "format": "{icon}   {capacity}%",
-    "format-alt": "{icon}   {capacity}% │ {power:0.2f} watts",
-    // ----------------------------------------
-    // Charging state
-    // ----------------------------------------
-    "format-charging": " {capacity}%",
-    // ----------------------------------------
-    // Plugged state.
-    // When fully charged and plugged - status will be "Not charging" - it is actually "plugged" here.
-    // ----------------------------------------
-    "format-full": "  {capacity}%",
-    "format-plugged": "  {capacity}%"
-    // ----------------------------------------
+    // Icon 2:
+    // "format": "{icon}   {volume}%",
+    // "format-muted": "   {volume}%",
+    // "format-bluetooth": " {icon}   {volume}%",
+    // "format-bluetooth-muted": "    {volume}%",
+    // "format-icons": {
+    //   "default": [
+    //     "",
+    //     "",
+    //     ""
+    //   ]
+    // },
+    "max-volume": 200,
+    "scroll-step": 5,
+    "smooth-scrolling-threshold": 1,
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "on-click-right": "pactl set-sink-volume @DEFAULT_SINK@ 50%",
+    "on-click-middle": "pavucontrol --tab 3"
   }
   // ========================================
 }

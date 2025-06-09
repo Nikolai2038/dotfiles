@@ -2,6 +2,7 @@
   "cSpell.words": [
     "activeworkspace",
     "blueman",
+    "brightnessctl",
     "dunstctl",
     "gsimplecal",
     "homefs",
@@ -14,6 +15,8 @@
     "movetoworkspace",
     "movewindow",
     "moveworkspacetomonitor",
+    "pavucontrol",
+    "playerctl",
     "resizewindow",
     "shuf",
     "switchxkblayout",
