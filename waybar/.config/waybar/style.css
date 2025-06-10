@@ -88,7 +88,7 @@ tooltip {
 
 #workspaces button {
   margin-top: 0px;
-  padding: 0px 6px;
+  padding: 0px 12px;
 
   /* Borders between workspaces */
   border-right: solid 1px #aaaaaa;
@@ -146,6 +146,12 @@ tooltip {
   padding: 0px 4px;
 }
 
+/* Structure example: */
+/* menu > menuitem */
+/*      > separator */
+/*      > menuitem */
+/*      > submenu > menuitem */
+/*                  menuitem */
 menu {
   background: alpha(#222222, 0.9);
   color: #ffffff;
@@ -158,8 +164,7 @@ menu {
   border-radius: 8px;
 }
 
-menu menuitem,
-submenu menuitem {
+menuitem {
   /* Make text smaller */
   font-size: 16px;
 
@@ -175,30 +180,25 @@ submenu menuitem {
 }
 
 /* Add separators between list items */
-menu menuitem:first-child,
-submenu menuitem:first-child {
+menuitem:first-child {
   border-top: none;
+}
+
+/* Add separators between list items */
+menuitem:last-child{
+  border-bottom: none;
+}
+
+menuitem:hover{
+  /* Same block style */
+  background: alpha(#777777, 0.4);
+  color: #ffffff;
 }
 
 separator {
   border-top: solid 1px #aaaaaa;
   border-bottom: solid 1px #aaaaaa;
   background: #aaaaaa;
-}
-
-/* Add separators between list items */
-menu menuitem:last-child,
-submenu menuitem:last-child {
-  border-bottom: none;
-}
-
-menu menuitem:hover,
-submenu menuitem:hover {
-  /* background-color: #003300; */
-
-  /* Same block style */
-  background: alpha(#777777, 0.4);
-  color: #ffffff;
 }
 
 #custom-notifications {

@@ -276,7 +276,6 @@
     // ----------------------------------------
   },
   "pulseaudio#output": {
-    // Icon 1:
     "format": "{icon} {volume}%",
     "format-muted": "🔇 {volume}%",
     "format-bluetooth": " {icon} {volume}%",
@@ -288,18 +287,6 @@
         "🔊"
       ]
     },
-    // // Icon 2:
-    // "format": "{icon}",
-    // "format-muted": "   {volume}%",
-    // "format-bluetooth": " {icon}   {volume}%",
-    // "format-bluetooth-muted": "    {volume}%",
-    // "format-icons": {
-    //   "default": [
-    //     "",
-    //     "",
-    //     ""
-    //   ]
-    // },
     "max-volume": 200,
     "scroll-step": 5,
     "smooth-scrolling-threshold": 1,
