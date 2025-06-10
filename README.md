@@ -21,8 +21,8 @@ In work...
         - Hyprland environment:
 
             ```sh
-            sudo pacman --noconfirm --sync --refresh --needed hyprland hyprpolkitagent qt5-wayland qt6-wayland waybar ttf-font-awesome blueman network-manager-applet gsimplecal copyq wl-clip-persist dunst zenity jq hyprpaper archlinux-xdg-menu power-profiles-daemon pavucontrol playerctl brightnessctl && \
-            sudo systemctl enable --now power-profiles-daemon.service
+            sudo pacman --noconfirm --sync --refresh --needed hyprland hyprpolkitagent qt5-wayland qt6-wayland waybar ttf-font-awesome blueman network-manager-applet gsimplecal copyq wl-clip-persist dunst zenity jq hyprpaper archlinux-xdg-menu power-profiles-daemon pavucontrol playerctl brightnessctl touchegg && \
+            sudo systemctl enable --now power-profiles-daemon.service touchegg.service
             ```
 
             - `hyprland`: Wayland compositor;
@@ -44,7 +44,8 @@ In work...
             - `power-profiles-daemon`: Manage power profiles;
             - `pavucontrol`: Audio management (input and outputs);
             - `playerctl`: Media controls;
-            - `brightnessctl`: To control screen brightness.
+            - `brightnessctl`: To control screen brightness;
+            - `touchegg`: Configure touchpad gestures.
 
 2. Clone this repository:
 
@@ -73,7 +74,8 @@ In work...
         stow --no-folding --target="${HOME}" --stow waybar && \
         stow --no-folding --target="${HOME}" --stow copyq && \
         stow --no-folding --target="${HOME}" --stow dunst && \
-        stow --no-folding --target="${HOME}" --stow gsimplecal
+        stow --no-folding --target="${HOME}" --stow gsimplecal && \
+        stow --no-folding --target="${HOME}" --stow touchegg
         ```
 
 ## 3. Uninstallation
@@ -99,6 +101,7 @@ In work...
         stow --no-folding --target="${HOME}" --delete waybar && \
         stow --no-folding --target="${HOME}" --delete copyq && \
         stow --no-folding --target="${HOME}" --delete dunst && \
-        stow --no-folding --target="${HOME}" --delete gsimplecal
+        stow --no-folding --target="${HOME}" --delete gsimplecal && \
+        stow --no-folding --target="${HOME}" --delete touchegg
 
 3. Remove cloned repository.

@@ -23,6 +23,7 @@
     "resizewindow",
     "shuf",
     "switchxkblayout",
+    "touchegg",
     "zenity"
   ],
   "filewatcher.commands": [
