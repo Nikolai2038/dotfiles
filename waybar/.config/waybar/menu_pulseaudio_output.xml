@@ -7,6 +7,9 @@
       </object>
     </child>
     <child>
+      <object class="GtkSeparatorMenuItem" />
+    </child>
+    <child>
       <object class="GtkMenuItem" id="increase">
         <property name="label">Increase volume by 5%</property>
       </object>
@@ -15,6 +18,9 @@
       <object class="GtkMenuItem" id="decrease">
         <property name="label">Decrease volume by 5%</property>
       </object>
+    </child>
+    <child>
+      <object class="GtkSeparatorMenuItem" />
     </child>
     <child>
       <object class="GtkMenuItem" id="set_to_100">
@@ -35,6 +41,9 @@
       <object class="GtkMenuItem" id="set_to_25">
         <property name="label">Set volume to 25%</property>
       </object>
+    </child>
+    <child>
+      <object class="GtkSeparatorMenuItem" />
     </child>
     <child>
       <object class="GtkMenuItem" id="configure">

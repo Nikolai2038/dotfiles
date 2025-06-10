@@ -331,7 +331,7 @@
     "exec": "~/.config/dunst/echo_number_of_notifications.sh",
     "interval": 1,
     "format": "{}",
-    "on-click": "dunstctl set-paused false && dunstctl history-pop",
+    "on-click": "~/.config/dunst/toggle_paused.sh",
     "on-click-middle": "~/.config/dunst/pop_all_notifications.sh",
     // ----------------------------------------
     // Menu

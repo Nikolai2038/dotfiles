@@ -7,6 +7,9 @@
       </object>
     </child>
     <child>
+      <object class="GtkSeparatorMenuItem" />
+    </child>
+    <child>
       <object class="GtkMenuItem" id="pop_latest">
         <property name="label">Pop up latest notification</property>
       </object>
@@ -17,8 +20,11 @@
       </object>
     </child>
     <child>
+      <object class="GtkSeparatorMenuItem" />
+    </child>
+    <child>
       <object class="GtkMenuItem" id="clear">
-        <property name="label">Clear notifications</property>
+        <property name="label">Clear notifications...</property>
       </object>
     </child>
   </object>

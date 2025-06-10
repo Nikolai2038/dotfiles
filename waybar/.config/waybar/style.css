@@ -147,10 +147,10 @@ tooltip {
 }
 
 menu {
-  background: #000000;
+  background: alpha(#222222, 0.9);
   color: #ffffff;
 
-  border: solid 1px #aaaaaa;
+  border: solid 2px #aaaaaa;
 
   /* Add extra padding for menu items to not cover menu borders */
   padding: 1px;
@@ -158,8 +158,38 @@ menu {
   border-radius: 8px;
 }
 
-menu * {
-  font-size: 18px;
+menu menuitem,
+submenu menuitem {
+  /* Make text smaller */
+  font-size: 16px;
+
+  /* Increase list items height */
+  padding: 4px 0;
+
+  /* Add separators between list items */
+  border-top: solid 1px #666666;
+  border-bottom: solid 1px #666666;
+
+  /* Remove margin between list items */
+  margin: 0;
+}
+
+/* Add separators between list items */
+menu menuitem:first-child,
+submenu menuitem:first-child {
+  border-top: none;
+}
+
+separator {
+  border-top: solid 1px #aaaaaa;
+  border-bottom: solid 1px #aaaaaa;
+  background: #aaaaaa;
+}
+
+/* Add separators between list items */
+menu menuitem:last-child,
+submenu menuitem:last-child {
+  border-bottom: none;
 }
 
 menu menuitem:hover,

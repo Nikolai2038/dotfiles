@@ -12,6 +12,9 @@
       </object>
     </child>
     <child>
+      <object class="GtkSeparatorMenuItem" />
+    </child>
+    <child>
       <object class="GtkMenuItem" id="set_to_max">
         <property name="label">Set brightness to 100%</property>
       </object>
@@ -26,8 +29,5 @@
         <property name="label">Set brightness to 1%</property>
       </object>
     </child>
-    <!--<child>
-      <object class="GtkSeparatorMenuItem" id="delimiter1" />
-    </child>-->
   </object>
 </interface>
