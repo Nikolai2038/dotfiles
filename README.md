@@ -21,8 +21,9 @@ In work...
         - Hyprland environment:
 
             ```sh
-            sudo pacman --noconfirm --sync --refresh --needed hyprland hyprpolkitagent qt5-wayland qt6-wayland waybar ttf-font-awesome blueman network-manager-applet gsimplecal copyq wl-clip-persist dunst zenity jq hyprpaper archlinux-xdg-menu power-profiles-daemon pavucontrol playerctl brightnessctl touchegg rofi-wayland rofi-calc && \
-            sudo systemctl enable --now power-profiles-daemon.service touchegg.service
+            sudo pacman --noconfirm --sync --refresh --needed hyprland hyprpolkitagent qt5-wayland qt6-wayland waybar ttf-font-awesome blueman network-manager-applet gsimplecal copyq wl-clip-persist dunst zenity jq hyprpaper archlinux-xdg-menu power-profiles-daemon pavucontrol playerctl brightnessctl touchegg rofi-wayland rofi-calc hyprshot hyprpicker pngquant wl-clipboard swappy && \
+            sudo systemctl enable --now power-profiles-daemon.service touchegg.service && \
+            systemctl --user enable --now dunst.service
             ```
 
             - `hyprland`: Wayland compositor;
@@ -47,7 +48,12 @@ In work...
             - `brightnessctl`: To control screen brightness;
             - `touchegg`: Configure touchpad gestures;
             - `rofi-wayland`: Application launcher;
-            - `rofi-calc`: Calculator inside `rofi`.
+            - `rofi-calc`: Calculator inside `rofi`;
+            - `hyprshot`: Screenshoter;
+            - `hyprpicker`: To be able to freeze screen (for screenshoter). Also is the color picker;
+            - `pngquant`: To compress PNG images (for screenshoter);
+            - `wl-clipboard`: Copy stdout to clipboard (for screenshoter);
+            - `swappy`: Shapes drawer on images (for screenshoter).
 
 2. Clone this repository:
 

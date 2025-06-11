@@ -1,6 +1,8 @@
 {
   "cSpell.words": [
     "activeworkspace",
+    "autocopy",
+    "bindl",
     "blueman",
     "brightnessctl",
     "dunstctl",
@@ -9,8 +11,11 @@
     "hypr",
     "hyprctl",
     "hyprpaper",
+    "hyprpicker",
     "hyprpolkitagent",
+    "hyprshot",
     "kbuildsycoca",
+    "killactive",
     "listactive",
     "movefocus",
     "movetoworkspace",
@@ -23,8 +28,12 @@
     "pulseaudio",
     "resizewindow",
     "shuf",
+    "swappy",
     "switchxkblayout",
+    "togglefloating",
+    "togglesplit",
     "touchegg",
+    "wlogout",
     "zenity"
   ],
   "filewatcher.commands": [
