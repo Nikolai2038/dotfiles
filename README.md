@@ -21,7 +21,7 @@ In work...
         - Hyprland environment:
 
             ```sh
-            sudo pacman --noconfirm --sync --refresh --needed hyprland hyprpolkitagent qt5-wayland qt6-wayland waybar ttf-font-awesome blueman network-manager-applet gsimplecal copyq wl-clip-persist dunst zenity jq hyprpaper archlinux-xdg-menu power-profiles-daemon pavucontrol playerctl brightnessctl touchegg rofi-wayland && \
+            sudo pacman --noconfirm --sync --refresh --needed hyprland hyprpolkitagent qt5-wayland qt6-wayland waybar ttf-font-awesome blueman network-manager-applet gsimplecal copyq wl-clip-persist dunst zenity jq hyprpaper archlinux-xdg-menu power-profiles-daemon pavucontrol playerctl brightnessctl touchegg rofi-wayland rofi-calc && \
             sudo systemctl enable --now power-profiles-daemon.service touchegg.service
             ```
 
@@ -46,7 +46,8 @@ In work...
             - `playerctl`: Media controls;
             - `brightnessctl`: To control screen brightness;
             - `touchegg`: Configure touchpad gestures;
-            - `rofi-wayland`: Application launcher.
+            - `rofi-wayland`: Application launcher;
+            - `rofi-calc`: Calculator inside `rofi`.
 
 2. Clone this repository:
 

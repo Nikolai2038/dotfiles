@@ -2,7 +2,7 @@
 /* Author: Newman Sanchez (https://github.com/newmanls) */
 
 * {
-    font:   "Roboto 12";
+    font:   "Fira Code Nerd Font Mono 12";
 
     background-color:   transparent;
     text-color:         @fg0;
@@ -65,6 +65,8 @@ listview {
     columns:    1;
 
     fixed-height: false;
+
+    scrollbar: true;
 }
 
 element {
@@ -83,6 +85,7 @@ element alternate active {
 
 element selected normal, element selected active {
     background-color:   @bg3;
+    color: @fg4;
 }
 
 element-icon {
@@ -92,4 +95,10 @@ element-icon {
 
 element-text {
     text-color: inherit;
+}
+
+#scrollbar {
+    handle-color: @fg3;
+    handle-width: 8px;
+    padding: 0 0 0 8px;
 }
