@@ -21,9 +21,23 @@ In work...
         - Hyprland environment:
 
             ```sh
-            sudo pacman --noconfirm --sync --refresh --needed hyprland hyprpolkitagent qt5-wayland qt6-wayland waybar ttf-font-awesome blueman network-manager-applet gsimplecal copyq wl-clip-persist dunst zenity jq hyprpaper archlinux-xdg-menu power-profiles-daemon pavucontrol playerctl brightnessctl touchegg rofi-wayland rofi-calc hyprshot hyprpicker pngquant wl-clipboard swappy konsole qt6-multimedia-ffmpeg dolphin phonon-qt6-vlc && \
+            sudo pacman --noconfirm --sync --refresh --needed hyprland hyprpolkitagent qt5-wayland qt6-wayland waybar ttf-font-awesome network-manager-applet gsimplecal copyq wl-clip-persist dunst zenity jq hyprpaper archlinux-xdg-menu power-profiles-daemon pavucontrol playerctl brightnessctl touchegg rofi-wayland rofi-calc hyprshot hyprpicker pngquant wl-clipboard swappy konsole qt6-multimedia-ffmpeg dolphin phonon-qt6-vlc && \
             sudo systemctl enable --now power-profiles-daemon.service touchegg.service && \
             systemctl --user enable --now dunst.service
+
+            # Audio
+            sudo pacman -Sy pipewire pipewire-audio lib32-pipewire pipewire-docs wireplumber pipewire-pulse pipewire-alsa pipewire-jack lib32-pipewire-jack && \
+            systemctl --user enable --now pipewire-pulse.service
+
+            # Bluetooth
+            sudo pacman --noconfirm --sync --refresh --needed blueman && \
+            sudo systemctl enable --now bluetooth.service
+
+            # Fonts
+            yay -Sy ttf-ms-win11-auto
+
+            # Dark theme
+            sudo pacman --noconfirm --sync --refresh --needed gnome-themes-extra breeze breeze-gtk gtk3 qt5ct qt6ct kvantum breeze-icons adw-gtk-theme xdg-desktop-portal-gtk xdg-desktop-portal-hyprland
             ```
 
             - `hyprland`: Wayland compositor;
@@ -57,21 +71,23 @@ In work...
             - `konsole`: Terminal;
             - `qt6-multimedia-ffmpeg`: Required dependency for `konsole`;
             - `dolphin`: File browser;
-            - `phonon-qt6-vlc`: Required dependency for `dolphin`.
+            - `phonon-qt6-vlc`: Required dependency for `dolphin`;
+            - `otf-font-awesome`: Default font for waybar with some icons. Also used by `swappy`;
+            - `ttf-firacode-nerd`: For `Fira Code Nerd Font Mono` font;
 
-2. Clone this repository:
+1. Clone this repository:
 
     ```sh
     git clone https://github.com/Nikolai2038/dotfiles.git
     ```
 
-3. `cd` to it:
+2. `cd` to it:
 
     ```sh
     cd ./dotfiles
     ```
 
-4. Apply configs:
+3. Apply configs:
 
     - `bash`:
 
@@ -119,5 +135,6 @@ In work...
         stow --no-folding --target="${HOME}" --delete gsimplecal && \
         stow --no-folding --target="${HOME}" --delete touchegg && \
         stow --no-folding --target="${HOME}" --delete rofi
+        ```
 
 3. Remove cloned repository.

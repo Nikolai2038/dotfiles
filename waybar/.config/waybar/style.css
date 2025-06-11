@@ -4,7 +4,8 @@
   border: none;
   border-radius: 0px;
   background: none;
-  font-family: 'Fira Code';
+  color: #ffffff;
+  font-family: "Verdana";
 }
 
 /* Make waybar transparent */
@@ -15,7 +16,6 @@ window#waybar {
 /* Tooltip popups */
 tooltip {
   background-color: #222222;
-  color: #ffffff;
   border-radius: 4px;
   border: 1px solid #444444;
   padding: 2px 4px;
@@ -42,11 +42,9 @@ tooltip {
   margin-left: 2px;
   margin-right: 2px;
 
-  /* Same block style */
   border-radius: 8px;
   font-size: 24px;
   background: alpha(#444444, 0.8);
-  color: #ffffff;
 
   padding: 0px 6px;
 }
@@ -64,21 +62,6 @@ tooltip {
 #pulseaudio.output,
 #custom-notifications {
   font-size: 16px;
-}
-
-/* Make two blocks look like one */
-#custom-power {
-  margin-right: 0;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-  padding-right: 0;
-}
-
-#battery {
-  margin-left: 0;
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-  padding-left: 0;
 }
 
 #workspaces {
@@ -111,6 +94,21 @@ tooltip {
   background: alpha(#007700, 0.4);
 }
 
+/* Make two blocks look like one */
+#custom-power {
+  margin-right: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  padding-right: 0;
+}
+
+#battery {
+  margin-left: 0;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  padding-left: 0;
+}
+
 #battery,
 #cpu,
 #memory,
@@ -137,11 +135,6 @@ tooltip {
   color: #aa0000;
 }
 
-#language {
-  /* We use monospace to keep same width */
-  font-family: 'Fira Code', monospace;
-}
-
 #tray {
   padding: 0px 4px;
 }
@@ -153,8 +146,7 @@ tooltip {
 /*      > submenu > menuitem */
 /*                  menuitem */
 menu {
-  background: alpha(#222222, 0.9);
-  color: #ffffff;
+  background: #222222;
 
   border: solid 2px #aaaaaa;
 
@@ -190,9 +182,7 @@ menuitem:last-child{
 }
 
 menuitem:hover{
-  /* Same block style */
   background: alpha(#777777, 0.4);
-  color: #ffffff;
 }
 
 separator {

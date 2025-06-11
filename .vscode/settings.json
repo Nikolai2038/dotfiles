@@ -10,6 +10,7 @@
     "homefs",
     "hypr",
     "hyprctl",
+    "HYPRCURSOR",
     "hyprpaper",
     "hyprpicker",
     "hyprpolkitagent",
@@ -24,6 +25,7 @@
     "nord",
     "pactl",
     "pavucontrol",
+    "PLATFORMTHEME",
     "playerctl",
     "pulseaudio",
     "resizewindow",
@@ -33,6 +35,7 @@
     "togglefloating",
     "togglesplit",
     "touchegg",
+    "wireplumber",
     "wlogout",
     "zenity"
   ],
