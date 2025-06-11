@@ -72,19 +72,21 @@ In work...
     - `bash`:
 
         ```sh
-        stow --no-folding  --target="${HOME}" --stow bash
+        stow --adopt --no-folding  --target="${HOME}" --stow bash && \
+        git restore .
         ```
 
     - Hyprland environment:
 
         ```sh
-        stow --no-folding --target="${HOME}" --stow hyprland && \
-        stow --no-folding --target="${HOME}" --stow waybar && \
-        stow --no-folding --target="${HOME}" --stow copyq && \
-        stow --no-folding --target="${HOME}" --stow dunst && \
-        stow --no-folding --target="${HOME}" --stow gsimplecal && \
-        stow --no-folding --target="${HOME}" --stow touchegg && \
-        stow --no-folding --target="${HOME}" --stow rofi
+        stow --adopt --no-folding --target="${HOME}" --stow hyprland && \
+        stow --adopt --no-folding --target="${HOME}" --stow waybar && \
+        stow --adopt --no-folding --target="${HOME}" --stow copyq && \
+        stow --adopt --no-folding --target="${HOME}" --stow dunst && \
+        stow --adopt --no-folding --target="${HOME}" --stow gsimplecal && \
+        stow --adopt --no-folding --target="${HOME}" --stow touchegg && \
+        stow --adopt --no-folding --target="${HOME}" --stow rofi && \
+        git restore .
         ```
 
 ## 3. Uninstallation
