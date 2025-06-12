@@ -36,8 +36,16 @@ In work...
             # Fonts
             yay -Sy ttf-ms-win11-auto
 
-            # Dark theme
-            sudo pacman --noconfirm --sync --refresh --needed gnome-themes-extra breeze breeze-gtk gtk3 qt5ct qt6ct kvantum breeze-icons adw-gtk-theme xdg-desktop-portal-gtk xdg-desktop-portal-hyprland
+            # Main Theme
+            # - breeze-gtk: for GTK applications;
+            # - breeze5: For Qt5 applications;
+            sudo pacman --noconfirm --sync --refresh --needed breeze breeze-gtk breeze5 gtk3 gtk4 xdg-desktop-portal-hyprland xdg-desktop-portal-gtk
+
+            # Icon Theme
+            sudo pacman --noconfirm --sync --refresh --needed papirus-icon-theme
+
+            # Cursor Theme
+            yay --noconfirm --sync --refresh --needed bibata-cursor-theme-bin
             ```
 
             - `hyprland`: Wayland compositor;
@@ -106,6 +114,7 @@ In work...
         stow --adopt --no-folding --target="${HOME}" --stow gsimplecal && \
         stow --adopt --no-folding --target="${HOME}" --stow touchegg && \
         stow --adopt --no-folding --target="${HOME}" --stow rofi && \
+        stow --adopt --no-folding --target="${HOME}" --stow dolphin && \
         git restore .
         ```
 
@@ -134,7 +143,8 @@ In work...
         stow --no-folding --target="${HOME}" --delete dunst && \
         stow --no-folding --target="${HOME}" --delete gsimplecal && \
         stow --no-folding --target="${HOME}" --delete touchegg && \
-        stow --no-folding --target="${HOME}" --delete rofi
+        stow --no-folding --target="${HOME}" --delete rofi && \
+        stow --no-folding --target="${HOME}" --delete dolphin
         ```
 
 3. Remove cloned repository.
