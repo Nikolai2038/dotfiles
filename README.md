@@ -39,7 +39,8 @@ In work...
             sudo systemctl enable bluetooth.service
 
             # Fonts
-            yay --noconfirm --sync --refresh --needed ttf-ms-win11-auto
+            yay --noconfirm --sync --refresh --needed ttf-ms-win11-auto && \
+            sudo pacman --noconfirm --sync --refresh --needed ttf-firacode-nerd font-manager
 
             # Main Theme
             # - "breeze-gtk": for GTK applications;
