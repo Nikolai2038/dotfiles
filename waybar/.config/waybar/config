@@ -67,8 +67,8 @@
     // Plugged state.
     // When fully charged and plugged - status will be "Not charging" - it is actually "plugged" here.
     // ----------------------------------------
-    "format-full": "  {capacity}%",
-    "format-plugged": "  {capacity}%",
+    "format-full": " {capacity}%",
+    "format-plugged": " {capacity}%",
     // ----------------------------------------
     // Menu
     // ----------------------------------------
@@ -121,8 +121,8 @@
   },
   "disk#rootfs": {
     "interval": 60,
-    "format": "⛁ {percentage_used}%",
-    "format-alt": "⛁ {percentage_used}% │ {path} │ {used} / {total}",
+    "format": "📁{percentage_used}%",
+    "format-alt": "📁{percentage_used}% │ {path} │ {used} / {total}",
     "on-click": "mode",
     "path": "/mnt/rootfs",
     "states": {
@@ -134,13 +134,13 @@
     // Tooltip
     // ----------------------------------------
     "tooltip": true,
-    "tooltip-format": "⛁ {percentage_used}% │ {path} │ {used} / {total}"
+    "tooltip-format": "📁{percentage_used}% │ {path} │ {used} / {total}"
     // ----------------------------------------
   },
   "disk#homefs": {
     "interval": 60,
-    "format": "⛁ {percentage_used}%",
-    "format-alt": "⛁ {percentage_used}% │ {path} │ {used} / {total}",
+    "format": "📁{percentage_used}%",
+    "format-alt": "📁{percentage_used}% │ {path} │ {used} / {total}",
     "on-click": "mode",
     "path": "/mnt/homefs",
     "states": {
@@ -152,7 +152,7 @@
     // Tooltip
     // ----------------------------------------
     "tooltip": true,
-    "tooltip-format": "⛁ {percentage_used}% │ {path} │ {used} / {total}"
+    "tooltip-format": "📁{percentage_used}% │ {path} │ {used} / {total}"
     // ----------------------------------------
   },
   // ========================================
@@ -216,10 +216,8 @@
     "reverse-direction": true
   },
   "custom/brightness": {
-    "format": "☀",
-    "format-alt": "☀ {}%",
-    "on-click": "mode",
-    "exec": "echo \"$(($(brightnessctl get) * 100 / $(brightnessctl max)))\"",
+    "format": "{}",
+    "exec": "~/.config/waybar/get_brightness_icon.sh",
     "interval": 1,
     "on-scroll-up": "brightnessctl set 5%+",
     // Set min brightness to 1%
@@ -318,7 +316,7 @@
     "exec": "~/.config/dunst/echo_number_of_notifications.sh",
     "interval": 1,
     "format": "{}",
-    "on-click": "~/.config/dunst/toggle_paused.sh",
+    "on-click": "dunstctl set-paused false && dunstctl history-pop",
     "on-click-middle": "~/.config/dunst/pop_all_notifications.sh",
     // ----------------------------------------
     // Menu
