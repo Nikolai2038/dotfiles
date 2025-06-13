@@ -31,7 +31,7 @@ In work...
 
             # Audio
             sudo pacman --noconfirm -Rdd jack2; \
-            sudo pacman --noconfirm --sync --refresh --needed pipewire pipewire-audio lib32-pipewire pipewire-docs wireplumber pipewire-pulse pipewire-alsa pipewire-jack lib32-pipewire-jack && \
+            sudo pacman --noconfirm --sync --refresh --needed pipewire pipewire-audio lib32-pipewire pipewire-docs wireplumber wireplumber-docs pipewire-pulse pipewire-alsa pipewire-jack lib32-pipewire-jack && \
             systemctl --user enable pipewire-pulse.service
 
             # Bluetooth
