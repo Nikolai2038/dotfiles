@@ -44,7 +44,9 @@ In work...
             # Main Theme
             # - "breeze-gtk": for GTK applications;
             # - "breeze5": For Qt5 applications;
-            sudo pacman --noconfirm --sync --refresh --needed breeze breeze-gtk breeze5 gtk3 gtk4 xdg-desktop-portal-hyprland xdg-desktop-portal-gtk
+            sudo pacman --noconfirm --sync --refresh --needed breeze breeze-gtk breeze5 gtk3 gtk4 xdg-desktop-portal-hyprland xdg-desktop-portal-gtk && \
+            gsettings set org.gnome.desktop.interface color-scheme "prefer-dark" && \
+            gsettings set org.gnome.desktop.interface gtk-theme "Breeze"
 
             # Icon Theme
             sudo pacman --noconfirm --sync --refresh --needed papirus-icon-theme
