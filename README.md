@@ -38,14 +38,19 @@ In work...
             sudo pacman --noconfirm --sync --refresh --needed blueman && \
             sudo systemctl enable bluetooth.service
 
-            # Fonts
-            yay --noconfirm --sync --refresh --needed ttf-ms-win11-auto && \
-            sudo pacman --noconfirm --sync --refresh --needed ttf-firacode-nerd font-manager
+            # Fonts:
+            # - "noto-fonts": For "Noto Sans";
+            # - "ttf-firacode-nerd": For "FiraCode Nerd Font Mono";
+            # - "font-manager": Font Manager and Font Viewer apps;
+            # - "ttf-ms-win11-auto": For Microsoft fonts with icons.
+            sudo pacman --noconfirm --sync --refresh --needed noto-fonts ttf-firacode-nerd font-manager && \
+            yay --noconfirm --sync --refresh --needed ttf-ms-win11-auto
 
             # Main Theme
             # - "breeze-gtk": for GTK applications;
-            # - "breeze5": For Qt5 applications;
-            sudo pacman --noconfirm --sync --refresh --needed breeze breeze-gtk breeze5 gtk3 gtk4 xdg-desktop-portal-hyprland xdg-desktop-portal-gtk && \
+            # - "breeze5": Breeze theme Qt applications;
+            # - "qt6ct": Qt applications theming.
+            sudo pacman --noconfirm --sync --refresh --needed breeze breeze-gtk breeze5 gtk3 gtk4 qt6ct xdg-desktop-portal-hyprland xdg-desktop-portal-gtk && \
             gsettings set org.gnome.desktop.interface color-scheme "prefer-dark" && \
             gsettings set org.gnome.desktop.interface gtk-theme "Breeze"
 
@@ -54,6 +59,9 @@ In work...
 
             # Cursor Theme
             yay --noconfirm --sync --refresh --needed bibata-cursor-theme-bin
+
+            # Image viewer
+            sudo pacman --noconfirm --sync --refresh --needed gwenview kimageformats jxrlib libheif qt6-imageformats
             ```
 
             - `hyprland`: Wayland compositor;
@@ -124,6 +132,7 @@ In work...
         stow --adopt --no-folding --target="${HOME}" --stow rofi && \
         stow --adopt --no-folding --target="${HOME}" --stow dolphin && \
         stow --adopt --no-folding --target="${HOME}" --stow konsole && \
+        stow --adopt --no-folding --target="${HOME}" --stow gwenview && \
         git restore .
         ```
 
@@ -156,7 +165,8 @@ In work...
         stow --no-folding --target="${HOME}" --delete touchegg && \
         stow --no-folding --target="${HOME}" --delete rofi && \
         stow --no-folding --target="${HOME}" --delete dolphin && \
-        stow --no-folding --target="${HOME}" --delete konsole
+        stow --no-folding --target="${HOME}" --delete konsole && \
+        stow --no-folding --target="${HOME}" --delete gwenview
         ```
 
 3. Remove cloned repository.

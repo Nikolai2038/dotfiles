@@ -1,1 +1,5 @@
+# Some Konsole quick commands can contains personal info
 /konsole/.config/konsolequickcommandsconfig
+
+# Gwenview settings file sadly can contain files history
+/gwenview/.config/gwenviewrc
