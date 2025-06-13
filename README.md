@@ -22,23 +22,28 @@ In work...
 
             ```sh
             sudo pacman --noconfirm --sync --refresh --needed hyprland hyprpolkitagent qt5-wayland qt6-wayland waybar ttf-font-awesome network-manager-applet gsimplecal copyq wl-clip-persist dunst zenity jq hyprpaper archlinux-xdg-menu power-profiles-daemon pavucontrol playerctl brightnessctl touchegg rofi-wayland rofi-calc hyprshot hyprpicker pngquant wl-clipboard swappy konsole qt6-multimedia-ffmpeg dolphin phonon-qt6-vlc && \
-            sudo systemctl enable --now power-profiles-daemon.service touchegg.service && \
-            systemctl --user enable --now dunst.service
+            sudo systemctl enable power-profiles-daemon.service touchegg.service
+
+            # Enable multilib repository
+            new_config="$(cat /etc/pacman.conf | tr '\n' '\r' | sed 's|\#\[multilib\]\r\#Include|[multilib]\rInclude|' | tr '\r' '\n')" && \
+            echo "${new_config}" | sudo tee /etc/pacman.conf && \
+            sudo pacman --sync --refresh
 
             # Audio
-            sudo pacman -Sy pipewire pipewire-audio lib32-pipewire pipewire-docs wireplumber pipewire-pulse pipewire-alsa pipewire-jack lib32-pipewire-jack && \
-            systemctl --user enable --now pipewire-pulse.service
+            sudo pacman --noconfirm -Rdd jack2; \
+            sudo pacman --noconfirm --sync --refresh --needed pipewire pipewire-audio lib32-pipewire pipewire-docs wireplumber pipewire-pulse pipewire-alsa pipewire-jack lib32-pipewire-jack && \
+            systemctl --user enable pipewire-pulse.service
 
             # Bluetooth
             sudo pacman --noconfirm --sync --refresh --needed blueman && \
-            sudo systemctl enable --now bluetooth.service
+            sudo systemctl enable bluetooth.service
 
             # Fonts
-            yay -Sy ttf-ms-win11-auto
+            yay --noconfirm --sync --refresh --needed ttf-ms-win11-auto
 
             # Main Theme
-            # - breeze-gtk: for GTK applications;
-            # - breeze5: For Qt5 applications;
+            # - "breeze-gtk": for GTK applications;
+            # - "breeze5": For Qt5 applications;
             sudo pacman --noconfirm --sync --refresh --needed breeze breeze-gtk breeze5 gtk3 gtk4 xdg-desktop-portal-hyprland xdg-desktop-portal-gtk
 
             # Icon Theme
@@ -83,19 +88,19 @@ In work...
             - `otf-font-awesome`: Default font for waybar with some icons. Also used by `swappy`;
             - `ttf-firacode-nerd`: For `Fira Code Nerd Font Mono` font;
 
-1. Clone this repository:
+2. Clone this repository:
 
     ```sh
     git clone https://github.com/Nikolai2038/dotfiles.git
     ```
 
-2. `cd` to it:
+3. `cd` to it:
 
     ```sh
     cd ./dotfiles
     ```
 
-3. Apply configs:
+4. Apply configs:
 
     - `bash`:
 
@@ -117,6 +122,8 @@ In work...
         stow --adopt --no-folding --target="${HOME}" --stow dolphin && \
         git restore .
         ```
+
+5. Reboot.
 
 ## 3. Uninstallation
 
