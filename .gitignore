@@ -3,3 +3,6 @@
 
 # Gwenview settings file sadly can contain files history
 /gwenview/.config/gwenviewrc
+
+# Okular settings file sadly can contain files history
+/okular/.config/okularrc

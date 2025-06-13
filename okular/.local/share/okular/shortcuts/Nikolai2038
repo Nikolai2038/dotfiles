@@ -1,0 +1,23 @@
+<gui name="okular" version="1">
+  <ActionProperties>
+    <Action name="go_previous" shortcut="PgUp"/>
+    <Action name="go_next" shortcut="PgDown"/>
+    <Action name="first_page" shortcut="Home"/>
+    <Action name="last_page" shortcut="End"/>
+    <Action name="edit_find" shortcut="Ctrl+F; Ctrl+Shift+F"/>
+    <Action name="options_configure" shortcut="Ctrl+Alt+T"/>
+    <Action name="close_find_bar" shortcut="Esc"/>
+    <Action name="edit_copy" shortcut="Ctrl+C; Ctrl+Shift+C"/>
+    <Action name="show_leftpanel" shortcut="Alt+1"/>
+    <Action name="show_bottombar" shortcut="Alt+3"/>
+    <Action name="mouse_textselect" shortcut="Ctrl+1"/>
+    <Action name="mouse_tableselect" shortcut="Ctrl+2"/>
+    <Action name="edit_undo" shortcut="Ctrl+Z"/>
+    <Action name="edit_redo" shortcut="Ctrl+Shift+Z"/>
+    <Action name="mainToolBar" shortcut="Alt+4"/>
+    <Action name="tab-next" shortcut="Ctrl+Tab"/>
+    <Action name="tab-previous" shortcut="Ctrl+Shift+Tab"/>
+    <Action name="undo-close-tab" shortcut="Ctrl+Shift+T"/>
+    <Action name="options_configure_keybinding" shortcut="Ctrl+Alt+G"/>
+  </ActionProperties>
+</gui>
