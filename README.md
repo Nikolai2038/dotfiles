@@ -123,6 +123,7 @@ In work...
         stow --adopt --no-folding --target="${HOME}" --stow touchegg && \
         stow --adopt --no-folding --target="${HOME}" --stow rofi && \
         stow --adopt --no-folding --target="${HOME}" --stow dolphin && \
+        stow --adopt --no-folding --target="${HOME}" --stow konsole && \
         git restore .
         ```
 
@@ -154,7 +155,8 @@ In work...
         stow --no-folding --target="${HOME}" --delete gsimplecal && \
         stow --no-folding --target="${HOME}" --delete touchegg && \
         stow --no-folding --target="${HOME}" --delete rofi && \
-        stow --no-folding --target="${HOME}" --delete dolphin
+        stow --no-folding --target="${HOME}" --delete dolphin && \
+        stow --no-folding --target="${HOME}" --delete konsole
         ```
 
 3. Remove cloned repository.

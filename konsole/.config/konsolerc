@@ -1,0 +1,17 @@
+[Desktop Entry]
+DefaultProfile=Nikolai2038.profile
+
+[General]
+ConfigVersion=1
+
+[Notification Messages]
+CloseAllEmptyTabs=true
+
+[Shortcut Schemes]
+Current Scheme=Nikolai2038
+
+[TabBar]
+NewTabButton=true
+
+[UiSettings]
+ColorScheme=

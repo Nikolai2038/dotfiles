@@ -1,0 +1,18 @@
+<gui name="konsole" version="1">
+  <ActionProperties>
+    <Action name="close-session" shortcut="Ctrl+W"/>
+    <Action name="edit_copy" shortcut="Ctrl+Shift+C"/>
+    <Action name="edit_paste" shortcut="Ctrl+Shift+V"/>
+    <Action name="select-all" shortcut="Ctrl+A"/>
+    <Action name="file_save_as" shortcut="Ctrl+S; Ctrl+Shift+S"/>
+    <Action name="edit_find" shortcut="Ctrl+F; Ctrl+Shift+F"/>
+    <Action name="new-tab" shortcut="Ctrl+T"/>
+    <Action name="close-window" shortcut="Ctrl+Shift+W"/>
+    <Action name="options_configure" shortcut="Ctrl+Alt+T"/>
+    <Action name="next-tab" shortcut="Ctrl+Tab"/>
+    <Action name="previous-tab" shortcut="Ctrl+Shift+Tab"/>
+    <Action name="move-tab-to-right" shortcut="Ctrl+Shift+D"/>
+    <Action name="move-tab-to-left" shortcut="Ctrl+Shift+A"/>
+    <Action name="options_configure_keybinding" shortcut="Ctrl+Alt+G"/>
+  </ActionProperties>
+</gui>
