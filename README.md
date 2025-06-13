@@ -21,7 +21,7 @@ In work...
         - Hyprland environment:
 
             ```sh
-            sudo pacman --noconfirm --sync --refresh --needed hyprland hyprpolkitagent qt5-wayland qt6-wayland waybar ttf-font-awesome network-manager-applet gsimplecal copyq wl-clip-persist dunst zenity jq hyprpaper archlinux-xdg-menu power-profiles-daemon pavucontrol playerctl brightnessctl touchegg rofi-wayland rofi-calc hyprshot hyprpicker pngquant wl-clipboard swappy konsole qt6-multimedia-ffmpeg dolphin phonon-qt6-vlc && \
+            sudo pacman --noconfirm --sync --refresh --needed hyprland hyprpolkitagent qt5-wayland qt6-wayland waybar ttf-font-awesome network-manager-applet gsimplecal copyq wl-clip-persist dunst zenity jq hyprpaper archlinux-xdg-menu power-profiles-daemon pavucontrol playerctl brightnessctl touchegg rofi-wayland rofi-calc hyprshot hyprpicker pngquant wl-clipboard swappy konsole qt6-multimedia-ffmpeg dolphin ark unrar phonon-qt6-vlc && \
             sudo systemctl enable power-profiles-daemon.service touchegg.service
 
             # Enable multilib repository
@@ -96,6 +96,8 @@ In work...
             - `konsole`: Terminal;
             - `qt6-multimedia-ffmpeg`: Required dependency for `konsole`;
             - `dolphin`: File browser;
+            - `ark`: Archiver for file browser;
+            - `unrar`: `.unrar` unarchive support for file browser;
             - `phonon-qt6-vlc`: Required dependency for `dolphin`;
             - `otf-font-awesome`: Default font for waybar with some icons. Also used by `swappy`;
             - `ttf-firacode-nerd`: For `Fira Code Nerd Font Mono` font;
