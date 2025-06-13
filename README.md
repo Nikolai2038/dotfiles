@@ -52,7 +52,8 @@ In work...
             # - "qt6ct": Qt applications theming.
             sudo pacman --noconfirm --sync --refresh --needed breeze breeze-gtk breeze5 gtk3 gtk4 qt6ct xdg-desktop-portal-hyprland xdg-desktop-portal-gtk && \
             gsettings set org.gnome.desktop.interface color-scheme "prefer-dark" && \
-            gsettings set org.gnome.desktop.interface gtk-theme "Breeze"
+            gsettings set org.gnome.desktop.interface gtk-theme "Breeze" && \
+            gsettings set org.gnome.desktop.interface font-name "Noto Sans 10"
 
             # Icon Theme
             sudo pacman --noconfirm --sync --refresh --needed papirus-icon-theme
