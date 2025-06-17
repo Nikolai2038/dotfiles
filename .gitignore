@@ -6,3 +6,6 @@
 
 # Okular settings file sadly can contain files history
 /okular/.config/okularrc
+
+# Decorations file, which will change based on the power plan
+/hyprland/.config/hypr/hyprland.conf.d/05_decorations_power_plan.conf
