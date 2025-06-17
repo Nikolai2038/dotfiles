@@ -6,6 +6,7 @@
     "blueman",
     "brightnessctl",
     "Chararacters",
+    "dbusclose",
     "druncache",
     "dunstctl",
     "focuswindow",
@@ -43,8 +44,11 @@
     "togglesplit",
     "touchegg",
     "uwsm",
+    "windowrule",
+    "windowrulev",
     "wireplumber",
     "wlogout",
+    "Xinerama",
     "zenity"
   ],
   "filewatcher.commands": [
