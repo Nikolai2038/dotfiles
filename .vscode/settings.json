@@ -19,6 +19,8 @@
     "hyprshot",
     "kbuildsycoca",
     "killactive",
+    "libnewt",
+    "libva",
     "listactive",
     "movefocus",
     "movetoworkspace",
@@ -38,6 +40,7 @@
     "togglefloating",
     "togglesplit",
     "touchegg",
+    "uwsm",
     "wireplumber",
     "wlogout",
     "zenity"

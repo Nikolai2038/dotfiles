@@ -21,7 +21,7 @@ In work...
         - Hyprland environment:
 
             ```sh
-            sudo pacman --noconfirm --sync --refresh --needed hyprland hyprpolkitagent qt5-wayland qt6-wayland waybar ttf-font-awesome network-manager-applet gsimplecal copyq wl-clip-persist dunst zenity jq hyprpaper archlinux-xdg-menu power-profiles-daemon pavucontrol playerctl brightnessctl touchegg rofi-wayland rofi-calc hyprshot hyprpicker pngquant wl-clipboard swappy konsole qt6-multimedia-ffmpeg dolphin ark unrar phonon-qt6-vlc && \
+            sudo pacman --noconfirm --sync --refresh --needed hyprland egl-wayland libva-nvidia-driver uwsm libnewt xorg-xwayland wayland-protocols hyprpolkitagent qt5-wayland qt6-wayland waybar ttf-font-awesome network-manager-applet gsimplecal copyq wl-clip-persist dunst zenity jq hyprpaper archlinux-xdg-menu power-profiles-daemon pavucontrol playerctl brightnessctl touchegg rofi-wayland rofi-calc hyprshot hyprpicker pngquant wl-clipboard swappy konsole qt6-multimedia-ffmpeg dolphin ark unrar phonon-qt6-vlc && \
             sudo systemctl enable power-profiles-daemon.service touchegg.service
 
             # Enable multilib repository
@@ -66,6 +66,9 @@ In work...
             ```
 
             - `hyprland`: Wayland compositor;
+            - `libva-nvidia-driver`: [VA-API hardware video acceleration](https://wiki.hypr.land/Nvidia/#va-api-hardware-video-acceleration);
+            - `uwsm` and `libnewt`: For [uwsm session start](https://wiki.hypr.land/Useful-Utilities/Systemd-start#installation);
+            - `xorg-xwayland` and `wayland-protocols`: Fix [flickering in XWayland games](https://wiki.hypr.land/Nvidia/#flickering-in-xwayland-games);
             - `hyprpolkitagent`: Polkit agent;
             - `qt5-wayland`: Qt5 support for Wayland;
             - `qt6-wayland`: Qt6 support for Wayland;
