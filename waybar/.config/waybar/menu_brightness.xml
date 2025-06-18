@@ -3,12 +3,12 @@
   <object class="GtkMenu" id="menu">
     <child>
       <object class="GtkMenuItem" id="increase">
-        <property name="label">Increase brightness by 5%</property>
+        <property name="label">Increase brightness by 5% [Mouse Wheel Up]</property>
       </object>
     </child>
     <child>
       <object class="GtkMenuItem" id="decrease">
-        <property name="label">Decrease brightness by 5%</property>
+        <property name="label">Decrease brightness by 5% [Mouse Wheel Down]</property>
       </object>
     </child>
     <child>
@@ -21,7 +21,7 @@
     </child>
     <child>
       <object class="GtkMenuItem" id="set_to_average">
-        <property name="label">Set brightness to 50%</property>
+        <property name="label">Set brightness to 50% [Middle Mouse Click]</property>
       </object>
     </child>
     <child>

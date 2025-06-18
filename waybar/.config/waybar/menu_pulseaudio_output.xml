@@ -3,7 +3,7 @@
   <object class="GtkMenu" id="menu">
     <child>
       <object class="GtkMenuItem" id="toggle">
-        <property name="label">Toggle mute/unmute</property>
+        <property name="label">Toggle mute/unmute [Left Mouse Click]</property>
       </object>
     </child>
     <child>
@@ -11,12 +11,12 @@
     </child>
     <child>
       <object class="GtkMenuItem" id="increase">
-        <property name="label">Increase volume by 5%</property>
+        <property name="label">Increase volume by 5% [Mouse Wheel Up]</property>
       </object>
     </child>
     <child>
       <object class="GtkMenuItem" id="decrease">
-        <property name="label">Decrease volume by 5%</property>
+        <property name="label">Decrease volume by 5% [Mouse Wheel Down]</property>
       </object>
     </child>
     <child>
@@ -47,7 +47,7 @@
     </child>
     <child>
       <object class="GtkMenuItem" id="configure">
-        <property name="label">Configure output devices...</property>
+        <property name="label">Configure output devices... [Middle Mouse Click]</property>
       </object>
     </child>
   </object>

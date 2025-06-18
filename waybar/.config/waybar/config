@@ -90,10 +90,19 @@
     "format": "  {usage}%",
     "format-alt": "  {usage}% │ {avg_frequency} GHz",
     "on-click": "mode",
+    "on-click-middle": "uwsm app -- hyprsysteminfo.desktop",
     "states": {
       "good": 0,
       "warning": 70,
       "critical": 90
+    },
+    // ----------------------------------------
+    // Menu
+    // ----------------------------------------
+    "menu": "on-click-right",
+    "menu-file": "~/.config/waybar/menu_cpu.xml",
+    "menu-actions": {
+      "open_system_info": "uwsm app -- hyprsysteminfo.desktop"
     },
     // ----------------------------------------
     // Tooltip
@@ -107,10 +116,19 @@
     "format": " {percentage}%",
     "format-alt": " {percentage}% │ {used:0.2f}/{total:0.2f} GiB",
     "on-click": "mode",
+    "on-click-middle": "uwsm app -- hyprsysteminfo.desktop",
     "states": {
       "good": 0,
       "warning": 70,
       "critical": 90
+    },
+    // ----------------------------------------
+    // Menu
+    // ----------------------------------------
+    "menu": "on-click-right",
+    "menu-file": "~/.config/waybar/menu_ram.xml",
+    "menu-actions": {
+      "open_system_info": "uwsm app -- hyprsysteminfo.desktop"
     },
     // ----------------------------------------
     // Tooltip
@@ -124,11 +142,20 @@
     "format": "📁{percentage_used}%",
     "format-alt": "📁{percentage_used}% │ {path} │ {used} / {total}",
     "on-click": "mode",
+    "on-click-middle": "uwsm app -- org.kde.dolphin.desktop",
     "path": "/mnt/rootfs",
     "states": {
       "good": 0,
       "warning": 70,
       "critical": 90
+    },
+    // ----------------------------------------
+    // Menu
+    // ----------------------------------------
+    "menu": "on-click-right",
+    "menu-file": "~/.config/waybar/menu_disk.xml",
+    "menu-actions": {
+      "open_file_browser": "uwsm app -- org.kde.dolphin.desktop"
     },
     // ----------------------------------------
     // Tooltip
@@ -142,11 +169,20 @@
     "format": "📁{percentage_used}%",
     "format-alt": "📁{percentage_used}% │ {path} │ {used} / {total}",
     "on-click": "mode",
+    "on-click-middle": "uwsm app -- org.kde.dolphin.desktop",
     "path": "/mnt/homefs",
     "states": {
       "good": 0,
       "warning": 70,
       "critical": 90
+    },
+    // ----------------------------------------
+    // Menu
+    // ----------------------------------------
+    "menu": "on-click-right",
+    "menu-file": "~/.config/waybar/menu_disk.xml",
+    "menu-actions": {
+      "open_file_browser": "uwsm app -- org.kde.dolphin.desktop"
     },
     // ----------------------------------------
     // Tooltip
@@ -167,6 +203,14 @@
     "format": " 🖼️ {}",
     "on-click": "~/.config/waybar/change_wallpapers.sh",
     // ----------------------------------------
+    // Menu
+    // ----------------------------------------
+    "menu": "on-click-right",
+    "menu-file": "~/.config/waybar/menu_wallpaper.xml",
+    "menu-actions": {
+      "change": "~/.config/waybar/change_wallpapers.sh"
+    },
+    // ----------------------------------------
     // Tooltip
     // ----------------------------------------
     "tooltip": true,
@@ -179,7 +223,15 @@
     "on-click": "mode",
     "interval": 1,
     // Open calendar on click
-    "on-click-middle": "gsimplecal",
+    "on-click-middle": "uwsm app -- gsimplecal",
+    // ----------------------------------------
+    // Menu
+    // ----------------------------------------
+    "menu": "on-click-right",
+    "menu-file": "~/.config/waybar/menu_clock.xml",
+    "menu-actions": {
+      "open_calendar": "uwsm app -- gsimplecal"
+    },
     // ----------------------------------------
     // Tooltip
     // ----------------------------------------
@@ -193,6 +245,15 @@
     "format-ru": "RU",
     "on-click": "hyprctl switchxkblayout current next",
     "on-click-right": "hyprctl switchxkblayout current prev",
+    // ----------------------------------------
+    // Menu
+    // ----------------------------------------
+    "menu": "on-click-right",
+    "menu-file": "~/.config/waybar/menu_language.xml",
+    "menu-actions": {
+      "next": "hyprctl switchxkblayout current next",
+      "prev": "hyprctl switchxkblayout current prev"
+    },
     // ----------------------------------------
     // Tooltip
     // ----------------------------------------
@@ -219,6 +280,7 @@
     "format": "{}",
     "exec": "~/.config/waybar/get_brightness_icon.sh",
     "interval": 1,
+    "on-click-middle": "brightnessctl set 50%",
     "on-scroll-up": "brightnessctl set 5%+",
     // Set min brightness to 1%
     "on-scroll-down": "[ \"$(($(brightnessctl get) * 100 / $(brightnessctl max)))\" -gt \"5\" ] && brightnessctl set 5%- || brightnessctl set 1%",
@@ -250,7 +312,7 @@
     "on-scroll-up": "pactl set-source-volume @DEFAULT_SOURCE@ +5%",
     "on-scroll-down": "pactl set-source-volume @DEFAULT_SOURCE@ -5%",
     "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
-    "on-click-middle": "pavucontrol --tab 4",
+    "on-click-middle": "uwsm app -- pavucontrol.desktop --tab 4",
     // ----------------------------------------
     // Menu
     // ----------------------------------------
@@ -264,7 +326,7 @@
       "set_to_75": "pactl set-source-volume @DEFAULT_SOURCE@ 75%",
       "set_to_50": "pactl set-source-volume @DEFAULT_SOURCE@ 50%",
       "set_to_25": "pactl set-source-volume @DEFAULT_SOURCE@ 25%",
-      "configure": "pavucontrol --tab 4"
+      "configure": "uwsm app -- pavucontrol.desktop --tab 4"
     },
     // ----------------------------------------
     // Tooltip
@@ -289,7 +351,7 @@
     "scroll-step": 5,
     "smooth-scrolling-threshold": 1,
     "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-    "on-click-middle": "pavucontrol --tab 3",
+    "on-click-middle": "uwsm app -- pavucontrol.desktop --tab 3",
     // ----------------------------------------
     // Menu
     // ----------------------------------------
@@ -303,7 +365,7 @@
       "set_to_75": "pactl set-sink-volume @DEFAULT_SINK@ 75%",
       "set_to_50": "pactl set-sink-volume @DEFAULT_SINK@ 50%",
       "set_to_25": "pactl set-sink-volume @DEFAULT_SINK@ 25%",
-      "configure": "pavucontrol --tab 3"
+      "configure": "uwsm app -- pavucontrol.desktop --tab 3"
     },
     // ----------------------------------------
     // Tooltip

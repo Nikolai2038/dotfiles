@@ -11,12 +11,12 @@
     </child>
     <child>
       <object class="GtkMenuItem" id="pop_latest">
-        <property name="label">Pop up latest notification</property>
+        <property name="label">Pop up latest notification [Left Mouse Click]</property>
       </object>
     </child>
     <child>
       <object class="GtkMenuItem" id="pop_all">
-        <property name="label">Pop up all notifications</property>
+        <property name="label">Pop up all notifications [Middle Mouse Click]</property>
       </object>
     </child>
     <child>
@@ -24,7 +24,7 @@
     </child>
     <child>
       <object class="GtkMenuItem" id="clear">
-        <property name="label">Clear notifications...</property>
+        <property name="label">Clear all notifications</property>
       </object>
     </child>
   </object>

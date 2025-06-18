@@ -185,6 +185,16 @@ systemctl --user enable --now xwayland-satellite.service
 sudo pacman --noconfirm --sync --refresh --needed hyprlock
 ```
 
+### 2.4. Waybar
+
+#### 2.4.1. System Info
+
+Opens by middle mouse button click on the CPU or RAM usage widget in the Waybar. Install it by running:
+
+```sh
+yay --noconfirm --sync --refresh --needed hyprsysteminfo
+```
+
 ## 3. Uninstallation
 
 1. `cd` to cloned repository:
