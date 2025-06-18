@@ -90,7 +90,7 @@
     "format": "  {usage}%",
     "format-alt": "  {usage}% │ {avg_frequency} GHz",
     "on-click": "mode",
-    "on-click-middle": "uwsm app -- hyprsysteminfo.desktop",
+    "on-click-middle": "~/.config/hypr/focus_or_open_app.sh hyprsysteminfo",
     "states": {
       "good": 0,
       "warning": 70,
@@ -102,7 +102,7 @@
     "menu": "on-click-right",
     "menu-file": "~/.config/waybar/menu_cpu.xml",
     "menu-actions": {
-      "open_system_info": "uwsm app -- hyprsysteminfo.desktop"
+      "open_system_info": "~/.config/hypr/focus_or_open_app.sh hyprsysteminfo"
     },
     // ----------------------------------------
     // Tooltip
@@ -116,7 +116,7 @@
     "format": " {percentage}%",
     "format-alt": " {percentage}% │ {used:0.2f}/{total:0.2f} GiB",
     "on-click": "mode",
-    "on-click-middle": "uwsm app -- hyprsysteminfo.desktop",
+    "on-click-middle": "~/.config/hypr/focus_or_open_app.sh hyprsysteminfo",
     "states": {
       "good": 0,
       "warning": 70,
@@ -128,7 +128,7 @@
     "menu": "on-click-right",
     "menu-file": "~/.config/waybar/menu_ram.xml",
     "menu-actions": {
-      "open_system_info": "uwsm app -- hyprsysteminfo.desktop"
+      "open_system_info": "~/.config/hypr/focus_or_open_app.sh hyprsysteminfo"
     },
     // ----------------------------------------
     // Tooltip
