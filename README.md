@@ -130,6 +130,19 @@ In work...
 
         ```sh
         stow --adopt --no-folding --target="${HOME}" --stow hyprland && \
+        git restore .
+        ```
+
+    - Sway environment:
+
+        ```sh
+        stow --adopt --no-folding --target="${HOME}" --stow sway &&
+        git restore .
+        ```
+
+    - Programs:
+
+        ```sh
         stow --adopt --no-folding --target="${HOME}" --stow waybar && \
         stow --adopt --no-folding --target="${HOME}" --stow copyq && \
         stow --adopt --no-folding --target="${HOME}" --stow dunst && \
@@ -163,7 +176,18 @@ In work...
     - Hyprland environment:
 
         ```sh
-        stow --no-folding --target="${HOME}" --delete hyprland && \
+        stow --no-folding --target="${HOME}" --delete hyprland
+        ```
+
+    - Sway environment:
+
+        ```sh
+        stow --no-folding --target="${HOME}" --delete sway
+        ```
+
+    - Programs:
+
+        ```sh
         stow --no-folding --target="${HOME}" --delete waybar && \
         stow --no-folding --target="${HOME}" --delete copyq && \
         stow --no-folding --target="${HOME}" --delete dunst && \
