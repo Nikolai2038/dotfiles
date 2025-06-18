@@ -8,6 +8,8 @@ In work...
 
 ## 2. Installation
 
+### 2.1. In work
+
 1. Install required packages:
 
     - Arch Linux:
@@ -156,6 +158,26 @@ In work...
         ```
 
 5. Reboot.
+
+### 2.2. Fix Xwayland high CPU usage and crash when selecting text by mouse cursor in JetBrains IDEs
+
+[2025-06-18] I encountered very strange issue with WebStorm (happens in other JetBrains IDEs too, and once even in Obsidian): when selecting text by mouse cursor in the terminal or in the commit message editor, the `Hyprland` process will start consuming 100% CPU, and in some cases then crash. The of the `Hyprland` command ends with:
+
+```plaintext
+error marshalling arguments for send: dup failed: Too many open files
+error in client communication (pid 30820)
+file descriptor expected, object (44), message add(huuuuu)
+error in client communication (pid 30767)
+XWAYLAND: wl_display#1: error 1: invalid arguments for zwp_linux_buffer_params_v1#44.add
+(EE) failed to dispatch Wayland events: Invalid argument
+```
+
+I was able to fix this by using `xwayland-satellite`, because found related [`invalid arguments for zwp_linux_buffer_params_v1` issue](https://github.com/Supreeeme/xwayland-satellite/issues/144).
+
+```sh
+sudo pacman --noconfirm --sync --refresh --needed xwayland-satellite && \
+systemctl --user enable --now xwayland-satellite.service
+```
 
 ## 3. Uninstallation
 
