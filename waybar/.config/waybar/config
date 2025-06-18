@@ -312,7 +312,8 @@
     "on-scroll-up": "pactl set-source-volume @DEFAULT_SOURCE@ +5%",
     "on-scroll-down": "pactl set-source-volume @DEFAULT_SOURCE@ -5%",
     "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
-    "on-click-middle": "uwsm app -- pavucontrol.desktop --tab 4",
+    // TODO: Create custom entry from "org.pulseaudio.pavucontrol.desktop" and use that instead of command
+    "on-click-middle": "uwsm app -- pavucontrol --tab 4",
     // ----------------------------------------
     // Menu
     // ----------------------------------------
@@ -326,7 +327,8 @@
       "set_to_75": "pactl set-source-volume @DEFAULT_SOURCE@ 75%",
       "set_to_50": "pactl set-source-volume @DEFAULT_SOURCE@ 50%",
       "set_to_25": "pactl set-source-volume @DEFAULT_SOURCE@ 25%",
-      "configure": "uwsm app -- pavucontrol.desktop --tab 4"
+      // TODO: Create custom entry from "org.pulseaudio.pavucontrol.desktop" and use that instead of command
+      "configure": "uwsm app -- pavucontrol --tab 4"
     },
     // ----------------------------------------
     // Tooltip
@@ -351,7 +353,8 @@
     "scroll-step": 5,
     "smooth-scrolling-threshold": 1,
     "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-    "on-click-middle": "uwsm app -- pavucontrol.desktop --tab 3",
+    // TODO: Create custom entry from "org.pulseaudio.pavucontrol.desktop" and use that instead of command
+    "on-click-middle": "uwsm app -- pavucontrol --tab 3",
     // ----------------------------------------
     // Menu
     // ----------------------------------------
@@ -365,7 +368,8 @@
       "set_to_75": "pactl set-sink-volume @DEFAULT_SINK@ 75%",
       "set_to_50": "pactl set-sink-volume @DEFAULT_SINK@ 50%",
       "set_to_25": "pactl set-sink-volume @DEFAULT_SINK@ 25%",
-      "configure": "uwsm app -- pavucontrol.desktop --tab 3"
+      // TODO: Create custom entry from "org.pulseaudio.pavucontrol.desktop" and use that instead of command
+      "configure": "uwsm app -- pavucontrol --tab 3"
     },
     // ----------------------------------------
     // Tooltip
