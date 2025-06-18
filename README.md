@@ -179,6 +179,12 @@ sudo pacman --noconfirm --sync --refresh --needed xwayland-satellite && \
 systemctl --user enable --now xwayland-satellite.service
 ```
 
+### 2.3. Lock Screen
+
+```sh
+sudo pacman --noconfirm --sync --refresh --needed hyprlock
+```
+
 ## 3. Uninstallation
 
 1. `cd` to cloned repository:
