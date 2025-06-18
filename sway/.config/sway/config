@@ -14,9 +14,9 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term foot
+set $term konsole
 # Your preferred application launcher
-set $menu wmenu-run
+set $menu if [ -f ~/.cache/rofi3.druncache ]; then sed -Ei 's/^[0-9]+(.*)$/0\1/' ~/.cache/rofi3.druncache; fi; rofi -normal-window -show drun -modes drun,run,calc,window -font 'Fira Code Nerd Font Mono 14' -show-icons -window-thumbnail -kb-element-next '' -kb-element-prev '' -kb-mode-next Shift+Right,Control+Tab,Tab -kb-mode-previous Shift+Left,Control+ISO_Left_Tab,ISO_Left_Tab -kb-row-first '' -kb-row-last '' -kb-move-front 'Home,KP_Home' -kb-move-end 'End,KP_End' -kb-clear-line Control+a -theme rounded-nord-dark -scroll-method 1 -drun-match-fields name,exec -drun-display-format "<b>{name}</b> (<i>{exec}</i>)" -no-lazy-grab -terminal konsole -run-shell-command '{terminal} -e bash -ic "{cmd} || true; read -p \"Press any key to continue...\" -n 1 -s -r && while read -t 0.1 -n 1 -r; do :; done"'
 
 ### Output configuration
 #
@@ -230,3 +230,12 @@ bar {
 }
 
 include /etc/sway/config.d/*
+
+# Gaps
+gaps inner 4
+
+# Disable point acceleration
+input "type:pointer" accel_profile flat
+
+# Enable NumLock on start
+input "type:keyboard" xkb_numlock enabled
