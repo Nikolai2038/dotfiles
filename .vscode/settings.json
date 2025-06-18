@@ -32,6 +32,8 @@
     "movetoworkspace",
     "movewindow",
     "moveworkspacetomonitor",
+    "nofocus",
+    "noinitialfocus",
     "nord",
     "okularrc",
     "onclick",
