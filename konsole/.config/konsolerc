@@ -6,6 +6,8 @@ ConfigVersion=1
 
 [Notification Messages]
 CloseAllEmptyTabs=true
+CloseAllTabs=true
+CloseSingleTab=true
 
 [Shortcut Schemes]
 Current Scheme=Nikolai2038
