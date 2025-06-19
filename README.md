@@ -195,6 +195,14 @@ Opens by middle mouse button click on the CPU or RAM usage widget in the Waybar.
 yay --noconfirm --sync --refresh --needed hyprsysteminfo
 ```
 
+### 2.5. NeoVim
+
+```sh
+sudo pacman --noconfirm --sync --refresh --needed neovim
+stow --adopt --no-folding --target="${HOME}" --stow neovim && \
+git restore .
+```
+
 ## 3. Uninstallation
 
 1. `cd` to cloned repository:
