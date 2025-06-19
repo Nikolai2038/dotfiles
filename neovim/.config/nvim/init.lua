@@ -15,7 +15,7 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 })
 
 -- ==============================
--- File Browser
+-- Plugins Setup
 -- ==============================
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -31,10 +31,17 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+  -- File Browser
   "nvim-tree/nvim-tree.lua",
   "nvim-tree/nvim-web-devicons", -- optional but recommended
+  -- Theme
+  "Mofiqul/vscode.nvim",
 })
+-- ==============================
 
+-- ==============================
+-- File Browser
+-- ==============================
 require("nvim-tree").setup()
 
 -- Toggle file browser
@@ -53,10 +60,24 @@ vim.api.nvim_create_autocmd("VimEnter", {
     vim.cmd("wincmd l")
   end,
 })
+
+-- Close File Browser when closing last window
+vim.api.nvim_create_autocmd("BufEnter", {
+  callback = function()
+    if #vim.api.nvim_list_wins() == 1 then
+      local bufname = vim.api.nvim_buf_get_name(0)
+      if bufname:match("NvimTree_") then
+        vim.cmd("quit")
+      end
+    end
+  end,
+})
 -- ==============================
+
+-- Theme
+vim.cmd.colorscheme("vscode")
 
 vim.keymap.set("n", "<A-a>", "<C-w>h")  -- focus left window
 vim.keymap.set("n", "<A-w>", "<C-w>k")  -- focus upper window
 vim.keymap.set("n", "<A-s>", "<C-w>j")  -- focus lower window
 vim.keymap.set("n", "<A-d>", "<C-w>l")  -- focus right window
-
