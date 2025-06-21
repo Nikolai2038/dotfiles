@@ -38,6 +38,7 @@ tooltip {
 #pulseaudio.output,
 #custom-notifications {
   /* Same gaps */
+  margin-top: 5px;
   margin-bottom: 4px;
   margin-left: 2px;
   margin-right: 2px;

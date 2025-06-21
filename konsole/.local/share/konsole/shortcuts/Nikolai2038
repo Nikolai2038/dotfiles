@@ -2,6 +2,7 @@
   <ActionProperties>
     <Action name="close-session" shortcut="Ctrl+W"/>
     <Action name="edit_copy" shortcut="Ctrl+Shift+C"/>
+    <Action name="edit_copy_contextmenu" shortcut="Ctrl+Shift+C"/>
     <Action name="edit_paste" shortcut="Ctrl+Shift+V"/>
     <Action name="select-all" shortcut="Ctrl+A"/>
     <Action name="file_save_as" shortcut="Ctrl+S; Ctrl+Shift+S"/>

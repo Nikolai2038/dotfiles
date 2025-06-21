@@ -4,9 +4,10 @@
     <Action name="file_close" shortcut="Ctrl+W"/>
     <Action name="edit_undo" shortcut="Ctrl+Z"/>
     <Action name="edit_cut" shortcut="Ctrl+X"/>
-    <Action name="edit_copy" shortcut="Ctrl+C; Ctrl+Shift+C"/>
-    <Action name="edit_paste" shortcut="Ctrl+V; Ctrl+Shift+V"/>
+    <Action name="edit_copy" shortcut="Ctrl+C; "/>
+    <Action name="edit_paste" shortcut="Ctrl+V; "/>
     <Action name="toggle_search" shortcut="Ctrl+F; Ctrl+Shift+F"/>
+    <Action name="edit_select_all" shortcut="Ctrl+A"/>
     <Action name="split_view_menu" shortcut="Alt+2"/>
     <Action name="undo_close_tab" shortcut="Ctrl+Shift+T"/>
     <Action name="options_configure_keybinding" shortcut="Ctrl+Alt+G"/>

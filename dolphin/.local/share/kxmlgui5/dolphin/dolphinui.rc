@@ -145,8 +145,8 @@
   <Action name="view_zoom_reset" priority="0"/>
  </ActionProperties>
  <ActionProperties scheme="Nikolai2038">
-  <Action name="movetotrash" shortcut="Del"/>
-  <Action name="delete_shortcut" shortcut="; "/>
-  <Action name="edit_cut" shortcut="Ctrl+X"/>
+  <Action name="edit_select_all" shortcut="Ctrl+A"/>
+  <Action name="edit_copy" shortcut="Ctrl+C; "/>
+  <Action name="edit_paste" shortcut="Ctrl+V; "/>
  </ActionProperties>
 </gui>
