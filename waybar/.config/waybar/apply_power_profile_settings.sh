@@ -33,8 +33,8 @@ function main() {
   # Change the monitors by script, because "hyprctl reload" does not correctly wait for them to turn on.
   if [ "${profile}" = "power-saver" ]; then
     change_monitor "DP-1" "1920x1080@60, 0x0, 1.0" || return "$?"
-    change_monitor "DP-2" "1920x1080@60, 1920x0, 1" || return "$?"
-    change_monitor "eDP-2" "1920x1080@60, 3840x0, 1" || return "$?"
+    change_monitor "DP-2" "1920x1080@60, 1920x0, 1.0" || return "$?"
+    change_monitor "eDP-2" "1920x1080@60, 3840x0, 1.0" || return "$?"
   elif [ "${profile}" = "balanced" ]; then
     change_monitor "DP-1" "1920x1080@60, 0x0, 1.0" || return "$?"
     change_monitor "DP-2" "2560x1440@60, 1920x-360, 1.0" || return "$?"
