@@ -23,8 +23,9 @@ In work...
         - Hyprland environment:
 
             ```sh
-            sudo pacman --noconfirm --sync --refresh --needed hyprland egl-wayland libva-nvidia-driver uwsm libnewt xorg-xwayland wayland-protocols hyprpolkitagent qt5-wayland qt6-wayland waybar ttf-font-awesome network-manager-applet gsimplecal copyq wl-clip-persist dunst zenity jq hyprpaper archlinux-xdg-menu power-profiles-daemon pavucontrol playerctl brightnessctl touchegg rofi-wayland rofi-calc hyprshot hyprpicker pngquant wl-clipboard swappy konsole qt6-multimedia-ffmpeg dolphin ark unrar phonon-qt6-vlc && \
-            sudo systemctl enable power-profiles-daemon.service touchegg.service
+            sudo pacman --noconfirm --sync --refresh --needed hyprland hypridle egl-wayland libva-nvidia-driver uwsm libnewt xorg-xwayland wayland-protocols hyprpolkitagent qt5-wayland qt6-wayland waybar ttf-font-awesome network-manager-applet gsimplecal copyq wl-clip-persist dunst zenity jq hyprpaper archlinux-xdg-menu power-profiles-daemon pavucontrol playerctl brightnessctl touchegg rofi-wayland rofi-calc hyprshot hyprpicker pngquant wl-clipboard swappy konsole qt6-multimedia-ffmpeg dolphin ark unrar phonon-qt6-vlc && \
+            sudo systemctl enable power-profiles-daemon.service touchegg.service && \
+            systemctl --user enable hypridle.service
 
             # Enable multilib repository
             new_config="$(cat /etc/pacman.conf | tr '\n' '\r' | sed 's|\#\[multilib\]\r\#Include|[multilib]\rInclude|' | tr '\r' '\n')" && \
