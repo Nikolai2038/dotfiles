@@ -91,8 +91,12 @@ tooltip {
   border-right: none;
 }
 
-#workspaces button.active {
+#workspaces button.visible {
   background: alpha(#007700, 0.4);
+}
+
+#workspaces button.active {
+  background: alpha(#770077, 0.4);
 }
 
 /* Make two blocks look like one */
