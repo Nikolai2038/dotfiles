@@ -71,7 +71,7 @@
     {
       "event": "onFileChange",
       "match": ".*/waybar/.*",
-      "cmd": "pgrep --exact --full waybar && pkill -SIGUSR2 waybar || waybar"
+      "cmd": "systemctl --user stop waybar.service; systemctl --user start waybar.service"
     },
     // Automatically reload "dunst" on file changes
     {
