@@ -25,22 +25,38 @@ function main() {
   # ========================================
   # NOTE: Previously, I used the following command, but it will work differently when you switch focus and workspaces a few times.
   #       So instead, we will use the "hyprctl clients" command to get the current windows.
-  # TODO: Windows PIDs can become less than current windows, so we need to find a way to focus windows somehow else - to focus the first opened window.
   # if [ "$(hyprctl dispatch focuswindow "class:^(${class})\$")" = "No such window found" ]; then
   #   # ...
   # fi
 
-  # Get current windows
-  local window_address
-  window_address="$(hyprctl clients -j | jq -r --arg cls "${class}" '
+  # Get all PIDs of the windows with the specified class
+  local pids
+  pids="$(hyprctl clients -j | jq -r --arg cls "${class}" '
     map(select(.class == $cls)) |
-    map({pid: .pid, address: .address}) |
-    sort_by(.pid) |
-    .[].address
-  ' | sort --numeric-sort | head -n 1)" || return "$?"
+    .[].pid
+  ')" || return "$?"
 
   # If window is open - focus on it
-  if [ -n "${window_address}" ]; then
+  if [ -n "${pids}" ]; then
+    # We get PIDs elapsed time to focus the oldest window (because PIDs are random)
+    local table_to_sort=""
+    local pid
+    for pid in ${pids}; do
+      table_to_sort+="$(ps -p "${pid}" -o etime=) ${pid}
+" || return "$?"
+    done
+
+    # Sort PIDs based on elapsed time of the process
+    # NOTE: You can replace "tail" for "head" here to focus the newest window instead of the oldest one.
+    local oldest_pid
+    oldest_pid="$(echo "${table_to_sort}" | grep -vE '^$' | sort --key=1 --numeric-sort | awk '{print $2}' | tail -n 1)" || return "$?"
+
+    # Get the address of the oldest window
+    window_address="$(hyprctl clients -j | jq -r --arg pid "${oldest_pid}" '
+      map(select(.pid == ($pid | tonumber))) |
+      .[0].address
+    ')" || return "$?"
+
     # Focus the window
     hyprctl dispatch focuswindow "address:${window_address}" || return "$?"
 
