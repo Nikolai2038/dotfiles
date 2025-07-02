@@ -211,6 +211,14 @@ sudo pacman --noconfirm --sync --refresh --needed kdeconnect sshfs && \
 xdg-mime default org.kde.dolphin.desktop x-scheme-handler/kdeconnect
 ```
 
+### 2.7. Power Management Menu
+
+```sh
+yay --noconfirm --sync --refresh --needed wlogout && \
+stow --adopt --no-folding --target="${HOME}" --stow wlogout && \
+git restore .
+```
+
 ## 3. Uninstallation
 
 1. `cd` to cloned repository:
