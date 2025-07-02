@@ -8,7 +8,7 @@ In work...
 
 ## 2. Installation
 
-### 2.1. In work
+### 2.1. (IN WORK) Hyprland
 
 1. Install required packages:
 
@@ -217,6 +217,14 @@ xdg-mime default org.kde.dolphin.desktop x-scheme-handler/kdeconnect
 yay --noconfirm --sync --refresh --needed wlogout && \
 stow --adopt --no-folding --target="${HOME}" --stow wlogout && \
 git restore .
+```
+
+### 2.8. (IN WORK) Application Launcher
+
+For power management options:
+
+```sh
+yay --noconfirm --sync --refresh --needed rofi-power-menu
 ```
 
 ## 3. Uninstallation
