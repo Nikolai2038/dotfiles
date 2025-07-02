@@ -204,6 +204,13 @@ stow --adopt --no-folding --target="${HOME}" --stow neovim && \
 git restore .
 ```
 
+### 2.6. KDE Connect
+
+```sh
+sudo pacman --noconfirm --sync --refresh --needed kdeconnect sshfs && \
+xdg-mime default org.kde.dolphin.desktop x-scheme-handler/kdeconnect
+```
+
 ## 3. Uninstallation
 
 1. `cd` to cloned repository:
