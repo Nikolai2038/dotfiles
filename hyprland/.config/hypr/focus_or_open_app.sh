@@ -71,10 +71,11 @@ function main() {
   #       And the keyboard focus will not change when workspace switches via this command.
   # hyprctl dispatch workspace "${default_workspace}" || return "$?"
 
-  # Using workspace rule in the Hyprland config itself is bad, because it will force new windows to open on the default workspace too.
-  # Instead, we create this rule dynamically, so it only applies until "hyprctl reload" is called.
-  # - Wiki about "keyword": https://wiki.hypr.land/Configuring/Using-hyprctl/#keyword
-  hyprctl keyword windowrulev2 "workspace ${default_workspace},class:^(${class})\$" || return "$?"
+  # DEBUG: Temporarily disabled - I am checking what is more useful
+  # # Using workspace rule in the Hyprland config itself is bad, because it will force new windows to open on the default workspace too.
+  # # Instead, we create this rule dynamically, so it only applies until "hyprctl reload" is called.
+  # # - Wiki about "keyword": https://wiki.hypr.land/Configuring/Using-hyprctl/#keyword
+  # hyprctl keyword windowrulev2 "workspace ${default_workspace},class:^(${class})\$" || return "$?"
 
   # Start the app (note that "uwsm" will hang until the app is closed)
   uwsm app -- "${class}.desktop" || return "$?"
