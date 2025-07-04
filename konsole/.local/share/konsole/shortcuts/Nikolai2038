@@ -2,7 +2,8 @@
   <ActionProperties>
     <Action name="close-session" shortcut="Ctrl+W"/>
     <Action name="edit_copy" shortcut="Ctrl+Shift+C"/>
-    <Action name="split-view-left-right" shortcut="Alt+E"/>
+    <Action name="split-view-left-right" shortcut="Alt+E; Ctrl+E"/>
+    <Action name="split-view-top-bottom" shortcut="Alt+Q; Ctrl+Q"/>
     <Action name="edit_paste" shortcut="Ctrl+Shift+V"/>
     <Action name="select-all" shortcut="Ctrl+A"/>
     <Action name="file_save_as" shortcut="Ctrl+S; Ctrl+Shift+S"/>
@@ -18,6 +19,16 @@
     <Action name="focus-view-right" shortcut="Alt+D"/>
     <Action name="move-tab-to-right" shortcut="Ctrl+Shift+D"/>
     <Action name="move-tab-to-left" shortcut="Ctrl+Shift+A"/>
+    <Action name="switch-to-tab-0" shortcut="Ctrl+1"/>
+    <Action name="switch-to-tab-1" shortcut="Ctrl+2"/>
+    <Action name="switch-to-tab-2" shortcut="Ctrl+3"/>
+    <Action name="switch-to-tab-3" shortcut="Ctrl+4"/>
+    <Action name="switch-to-tab-4" shortcut="Ctrl+5"/>
+    <Action name="switch-to-tab-5" shortcut="Ctrl+6"/>
+    <Action name="switch-to-tab-6" shortcut="Ctrl+7"/>
+    <Action name="switch-to-tab-7" shortcut="Ctrl+8"/>
+    <Action name="switch-to-tab-8" shortcut="Ctrl+9"/>
+    <Action name="switch-to-tab-9" shortcut="Ctrl+0"/>
     <Action name="options_configure_keybinding" shortcut="Ctrl+Alt+G"/>
   </ActionProperties>
 </gui>

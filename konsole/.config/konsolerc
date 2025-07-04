@@ -1,8 +1,16 @@
 [Desktop Entry]
 DefaultProfile=Nikolai2038.profile
 
+[FileLocation]
+scrollbackUseCacheLocation=true
+scrollbackUseSystemLocation=false
+
 [General]
 ConfigVersion=1
+
+[KonsoleWindow]
+FocusFollowsMouse=true
+RemoveWindowTitleBarAndFrame=true
 
 [Notification Messages]
 CloseAllEmptyTabs=true
@@ -11,6 +19,10 @@ CloseSingleTab=true
 
 [Shortcut Schemes]
 Current Scheme=Nikolai2038
+
+[SplitView]
+SplitDragHandleSize=SplitDragHandleMedium
+SplitViewVisibility=AlwaysHideSplitHeader
 
 [TabBar]
 NewTabButton=true
