@@ -13,6 +13,12 @@ Name=Nikolai2038
 Parent=FALLBACK/
 ShowTerminalSizeHint=false
 
+[Interaction Options]
+OpenLinksByDirectClickEnabled=false
+TextEditorCmd=6
+TextEditorCmdCustom=code --goto "PATH:LINE:COLUMN"
+UnderlineFilesEnabled=true
+
 [Scrolling]
 HistoryMode=2
 ScrollFullPage=true
