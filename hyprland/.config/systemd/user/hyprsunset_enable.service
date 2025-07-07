@@ -1,0 +1,7 @@
+[Unit]
+Description=Enable blue-light filter
+
+[Service]
+Type=oneshot
+# Enable blue-light filter
+ExecStart=/usr/bin/hyprctl hyprsunset temperature 4000 && /usr/bin/hyprctl hyprsunset gamma 50

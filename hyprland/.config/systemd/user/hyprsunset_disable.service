@@ -1,0 +1,7 @@
+[Unit]
+Description=Disable blue-light filter
+
+[Service]
+Type=oneshot
+# Disable blue-light filter
+ExecStart=/usr/bin/hyprctl hyprsunset identity && /usr/bin/hyprctl hyprsunset gamma 100

@@ -227,6 +227,29 @@ For power management options:
 yay --noconfirm --sync --refresh --needed rofi-power-menu
 ```
 
+### 2.9. Blue-light Filter
+
+```sh
+sudo pacman --noconfirm --sync --refresh --needed hyprsunset && \
+systemctl --user enable --now hyprsunset.service
+```
+
+Enable custom services (were created by `stow`):
+
+```sh
+systemctl --user daemon-reload && \
+systemctl --user enable --now hyprsunset_enable.timer && \
+systemctl --user enable --now hyprsunset_disable.timer
+```
+
+If timer is not working, try to debug it:
+
+```sh
+systemctl --user list-timers && \
+systemctl --user status hyprsunset_enable.timer && \
+systemctl --user status hyprsunset.service
+```
+
 ## 3. Uninstallation
 
 1. `cd` to cloned repository:

@@ -1,0 +1,11 @@
+[Unit]
+Description=Enable blue-light filter
+
+[Timer]
+OnCalendar=*-*-* 20:00:00
+
+# Start timer when system is booted after time has passed
+Persistent=true
+
+[Install]
+WantedBy=timers.target
