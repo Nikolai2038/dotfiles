@@ -2,7 +2,7 @@
 
 function main() {
   local class="${1}" && shift
-  local default_workspace="${1}" && shift
+  local default_workspace_id="${1}" && shift
   local is_force_new_window="${1:-0}" && shift
 
   # ========================================
@@ -10,9 +10,15 @@ function main() {
   # ========================================
   # If we explicitly requested to open a new window, we don't switch workspace - open on the current one.
   if [ "${is_force_new_window}" = "1" ]; then
-    # DEBUG: Temporarily disabled - I am checking what is more useful
-    # # Reload Hyprland rules to not include the "default_workspace" rule.
+    # NOTE: I used that to reload Hyprland rules to not include the "default_workspace_id" rule.
+    #       But it does make monitors reload, which is bad.
     # hyprctl reload || return "$?"
+
+    local current_workspace_id
+    current_workspace_id="$(hyprctl activeworkspace -j | jq -r '.id')" || return "$?"
+
+    # Reset workspace for class to current workspace
+    hyprctl keyword windowrulev2 "workspace ${current_workspace_id},class:^(${class})\$" || return "$?"
 
     # Start the app (note that "uwsm" will hang until the app is closed)
     uwsm app -- "${class}.desktop" || return "$?"
@@ -70,13 +76,12 @@ function main() {
   # ========================================
   # NOTE: Switching workspace before opening the app is not enough, because the app will be opened on the workspace with current keyboard focus.
   #       And the keyboard focus will not change when workspace switches via this command.
-  # hyprctl dispatch workspace "${default_workspace}" || return "$?"
+  # hyprctl dispatch workspace "${default_workspace_id}" || return "$?"
 
-  # DEBUG: Temporarily disabled - I am checking what is more useful
-  # # Using workspace rule in the Hyprland config itself is bad, because it will force new windows to open on the default workspace too.
-  # # Instead, we create this rule dynamically, so it only applies until "hyprctl reload" is called.
-  # # - Wiki about "keyword": https://wiki.hypr.land/Configuring/Using-hyprctl/#keyword
-  # hyprctl keyword windowrulev2 "workspace ${default_workspace},class:^(${class})\$" || return "$?"
+  # Using workspace rule in the Hyprland config itself is bad, because it will force new windows to open on the default workspace too.
+  # Instead, we create this rule dynamically, so it only applies until "hyprctl reload" is called.
+  # - Wiki about "keyword": https://wiki.hypr.land/Configuring/Using-hyprctl/#keyword
+  hyprctl keyword windowrulev2 "workspace ${default_workspace_id},class:^(${class})\$" || return "$?"
 
   # Start the app (note that "uwsm" will hang until the app is closed)
   uwsm app -- "${class}.desktop" || return "$?"
