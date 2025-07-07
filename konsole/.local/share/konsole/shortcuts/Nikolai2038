@@ -8,6 +8,8 @@
     <Action name="select-all" shortcut="Ctrl+A"/>
     <Action name="file_save_as" shortcut="Ctrl+S; Ctrl+Shift+S"/>
     <Action name="edit_find" shortcut="Ctrl+F; Ctrl+Shift+F"/>
+    <Action name="enlarge-font" shortcut="Ctrl+="/>
+    <Action name="shrink-font" shortcut="Ctrl+-"/>
     <Action name="new-tab" shortcut="Ctrl+T"/>
     <Action name="close-window" shortcut="Ctrl+Shift+W"/>
     <Action name="options_configure" shortcut="Ctrl+Alt+T"/>

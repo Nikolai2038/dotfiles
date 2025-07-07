@@ -10,8 +10,9 @@ function main() {
   # ========================================
   # If we explicitly requested to open a new window, we don't switch workspace - open on the current one.
   if [ "${is_force_new_window}" = "1" ]; then
-    # Reload Hyprland rules to not include the "default_workspace" rule.
-    hyprctl reload || return "$?"
+    # DEBUG: Temporarily disabled - I am checking what is more useful
+    # # Reload Hyprland rules to not include the "default_workspace" rule.
+    # hyprctl reload || return "$?"
 
     # Start the app (note that "uwsm" will hang until the app is closed)
     uwsm app -- "${class}.desktop" || return "$?"

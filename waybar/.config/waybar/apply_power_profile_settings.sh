@@ -7,13 +7,13 @@ function change_monitor() {
   # If specified monitor is connected
   if hyprctl monitors | grep -q "^Monitor ${monitor}"; then
     # Change it's settings
-    hyprctl dispatch exec "hyprctl keyword monitor '${monitor}, ${params}'" || return "$?"
+    hyprctl keyword monitor "${monitor}, ${params}" || return "$?"
 
     # Wait until Hyprland reconfigure the monitor.
     # If we do not wait, other monitors will wrongly set their positions.
     local iterations=0
     while ! hyprctl monitors | grep -q "^Monitor ${monitor}"; do
-      sleep 0.1
+      sleep 0.5
 
       ((iterations++))
       if [ "${iterations}" -gt 30 ]; then
