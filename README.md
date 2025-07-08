@@ -250,6 +250,12 @@ systemctl --user status hyprsunset_enable.timer && \
 systemctl --user status hyprsunset.service
 ```
 
+### 2.10. System Monitor
+
+```sh
+sudo pacman --noconfirm --sync --refresh --needed resources
+```
+
 ## 3. Uninstallation
 
 1. `cd` to cloned repository:

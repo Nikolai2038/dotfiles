@@ -2,6 +2,11 @@
 <interface>
   <object class="GtkMenu" id="menu">
     <child>
+      <object class="GtkMenuItem" id="open_system_info">
+        <property name="label">Open System Info [Middle Mouse Click]</property>
+      </object>
+    </child>
+    <child>
       <object class="GtkMenuItem" id="power-saver">
         <property name="label">🌿 Set mode to "power-saver"</property>
       </object>

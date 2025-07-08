@@ -3,7 +3,12 @@
   <object class="GtkMenu" id="menu">
     <child>
       <object class="GtkMenuItem" id="open_system_info">
-        <property name="label">Open System Info [Middle Mouse Click]</property>
+        <property name="label">Open System Info</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkMenuItem" id="open_system_monitor">
+        <property name="label">Open System Monitor [Middle Mouse Click]</property>
       </object>
     </child>
   </object>

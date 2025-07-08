@@ -21,6 +21,7 @@
   "custom/power": {
     "exec": "~/.config/waybar/get_power_icon.sh",
     "interval": 1,
+    "on-click-middle": "~/.config/hypr/focus_or_open_app.sh hyprsysteminfo",
     "format": "{} ",
     // ----------------------------------------
     // Menu
@@ -28,6 +29,7 @@
     "menu": "on-click-right",
     "menu-file": "~/.config/waybar/menu_power.xml",
     "menu-actions": {
+      "open_system_info": "~/.config/hypr/focus_or_open_app.sh hyprsysteminfo",
       "power-saver": "powerprofilesctl set power-saver && ~/.config/waybar/apply_power_profile_settings.sh",
       "balanced": "powerprofilesctl set balanced && ~/.config/waybar/apply_power_profile_settings.sh",
       "performance": "powerprofilesctl set performance && ~/.config/waybar/apply_power_profile_settings.sh"
@@ -46,7 +48,7 @@
       "warning": 30,
       "critical": 15
     },
-    "on-click": "mode",
+    "on-click-middle": "~/.config/hypr/focus_or_open_app.sh hyprsysteminfo",
     // ----------------------------------------
     // Discharging state
     // ----------------------------------------
@@ -75,6 +77,7 @@
     "menu": "on-click-right",
     "menu-file": "~/.config/waybar/menu_power.xml",
     "menu-actions": {
+      "open_system_info": "~/.config/hypr/focus_or_open_app.sh hyprsysteminfo",
       "power-saver": "powerprofilesctl set power-saver && ~/.config/waybar/apply_power_profile_settings.sh",
       "balanced": "powerprofilesctl set balanced && ~/.config/waybar/apply_power_profile_settings.sh",
       "performance": "powerprofilesctl set performance && ~/.config/waybar/apply_power_profile_settings.sh"
@@ -90,7 +93,8 @@
     "format": "  {usage}%",
     "format-alt": "  {usage}% │ {avg_frequency} GHz",
     "on-click": "mode",
-    "on-click-middle": "~/.config/hypr/focus_or_open_app.sh hyprsysteminfo",
+    // TODO: "--open-tab-id cpu"
+    "on-click-middle": "~/.config/hypr/focus_or_open_app.sh net.nokyan.Resources",
     "states": {
       "good": 0,
       "warning": 70,
@@ -102,7 +106,8 @@
     "menu": "on-click-right",
     "menu-file": "~/.config/waybar/menu_cpu.xml",
     "menu-actions": {
-      "open_system_info": "~/.config/hypr/focus_or_open_app.sh hyprsysteminfo"
+      "open_system_info": "~/.config/hypr/focus_or_open_app.sh hyprsysteminfo",
+      "open_system_monitor": "~/.config/hypr/focus_or_open_app.sh net.nokyan.Resources"
     },
     // ----------------------------------------
     // Tooltip
@@ -116,7 +121,8 @@
     "format": " {percentage}%",
     "format-alt": " {percentage}% │ {used:0.2f}/{total:0.2f} GiB",
     "on-click": "mode",
-    "on-click-middle": "~/.config/hypr/focus_or_open_app.sh hyprsysteminfo",
+    // TODO: "--open-tab-id memory"
+    "on-click-middle": "~/.config/hypr/focus_or_open_app.sh net.nokyan.Resources",
     "states": {
       "good": 0,
       "warning": 70,
@@ -128,7 +134,8 @@
     "menu": "on-click-right",
     "menu-file": "~/.config/waybar/menu_ram.xml",
     "menu-actions": {
-      "open_system_info": "~/.config/hypr/focus_or_open_app.sh hyprsysteminfo"
+      "open_system_info": "~/.config/hypr/focus_or_open_app.sh hyprsysteminfo",
+      "open_system_monitor": "~/.config/hypr/focus_or_open_app.sh net.nokyan.Resources"
     },
     // ----------------------------------------
     // Tooltip
