@@ -10,20 +10,24 @@ function main() {
   # ========================================
   # If we explicitly requested to open a new window, we don't switch workspace - open on the current one.
   if [ "${is_force_new_window}" = "1" ]; then
-    # NOTE: I used that to reload Hyprland rules to not include the "default_workspace_id" rule.
-    #       But it does make monitors reload, which is bad.
+    # # NOTE: I used that to reload Hyprland rules to not include the "default_workspace_id" rule.
+    # #       But it does make monitors reload, which is bad.
     # hyprctl reload || return "$?"
 
-    local current_workspace_id
+    # # NOTE: Previously I reloaded the config before app start.
+    # #       But this is not applied to tool windows, so I do not use that anymore.
+    # hyprctl reload config-only || return "$?"
 
-    # Way 1:
-    current_workspace_id="$(hyprctl activeworkspace -j | jq -r '.id')" || return "$?"
+    # local current_workspace_id
 
-    # # Way 2:
-    # current_workspace_id="$(hyprctl monitors -j | jq '.[] | select(.focused == true) | .activeWorkspace.id')" || return "$?"
+    # # Way 1:
+    # current_workspace_id="$(hyprctl activeworkspace -j | jq -r '.id')" || return "$?"
 
-    # Reset workspace for class to current workspace
-    hyprctl keyword windowrulev2 "workspace ${current_workspace_id},class:^(${class})\$" || return "$?"
+    # # # Way 2:
+    # # current_workspace_id="$(hyprctl monitors -j | jq '.[] | select(.focused == true) | .activeWorkspace.id')" || return "$?"
+
+    # # Reset workspace for class to current workspace
+    # hyprctl keyword windowrulev2 "workspace ${current_workspace_id},class:^(${class})\$" || return "$?"
 
     # Start the app (note that "uwsm" will hang until the app is closed)
     uwsm app -- "${class}.desktop" || return "$?"
@@ -122,6 +126,14 @@ function main() {
   # Instead, we create this rule dynamically, so it only applies until "hyprctl reload" is called.
   # - Wiki about "keyword": https://wiki.hypr.land/Configuring/Using-hyprctl/#keyword
   hyprctl keyword windowrulev2 "workspace ${default_workspace_id},class:^(${class})\$" || return "$?"
+
+  {
+    # Wait until the app is opened
+    sleep 3
+
+    # Reload config from files to remove the workspace rule we added aboves
+    hyprctl reload config-only || return "$?"
+  } &
 
   # Start the app (note that "uwsm" will hang until the app is closed)
   uwsm app -- "${class}.desktop" || return "$?"
