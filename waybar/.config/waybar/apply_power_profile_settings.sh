@@ -84,7 +84,7 @@ function main() {
   elif [ "${profile}" = "performance" ]; then
     hyprctl dispatch exec "decoration.shadow.enabled=true" || return "$?"
     hyprctl dispatch exec "decoration.blur.enabled=true" || return "$?"
-    hyprctl dispatch exec "animations.enabled=true" || return "$?"
+    hyprctl dispatch exec "animations.enabled=false" || return "$?"
     hyprctl dispatch exec "misc.vfr=false" || return "$?"
 
     brightnessctl set 100% || return "$?"
